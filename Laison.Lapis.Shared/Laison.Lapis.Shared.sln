@@ -7,11 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{170EBFB8-CBF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{590F6D76-0705-46CE-BE04-3C7D8D2C5E65}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{CB2D8CEB-60AF-455F-9C9C-9BA046E2A816}"
-	ProjectSection(SolutionItems) = preProject
-		common.props = common.props
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Host.Shared", "src\Laison.Lapis.Host.Shared\Laison.Lapis.Host.Shared.csproj", "{4F979583-1CCB-4F4D-9CA1-FF3111CD2A5A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Shared", "src\Laison.Lapis.Shared\Laison.Lapis.Shared.csproj", "{77636A27-D1EC-4ED3-B2EF-F71641F3DD53}"
