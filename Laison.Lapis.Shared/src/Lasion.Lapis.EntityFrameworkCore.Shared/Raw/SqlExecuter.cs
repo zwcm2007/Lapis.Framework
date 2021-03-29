@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace DangKe.Archive.EntityFrameworkCore.Shared
+namespace Laison.Lapis.EntityFrameworkCore.Shared
 {
     /// <summary>
     /// SqlExecuter

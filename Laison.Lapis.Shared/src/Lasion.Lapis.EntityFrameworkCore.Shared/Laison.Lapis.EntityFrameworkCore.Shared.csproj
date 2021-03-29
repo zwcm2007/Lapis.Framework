@@ -3,8 +3,8 @@
   <Import Project="..\..\common.props" />
   
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>DangKe.Archive.EntityFrameworkCore.Shared</RootNamespace>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>Laison.Lapis.EntityFrameworkCore.Shared</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="3.0.5" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="4.2.2" />
   </ItemGroup>
 
 </Project>

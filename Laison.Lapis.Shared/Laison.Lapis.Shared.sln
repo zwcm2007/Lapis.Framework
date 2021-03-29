@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.HttpApi.Shared
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Host", "host\Laison.Lapis.Host\Laison.Lapis.Host.csproj", "{689EC452-1D1A-4B68-A83F-261ABF0D5211}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.EntityFrameworkCore.Shared", "src\Lasion.Lapis.EntityFrameworkCore.Shared\Laison.Lapis.EntityFrameworkCore.Shared.csproj", "{A55C5061-DECB-47DD-87C4-E40D6E170D16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{689EC452-1D1A-4B68-A83F-261ABF0D5211}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{689EC452-1D1A-4B68-A83F-261ABF0D5211}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{689EC452-1D1A-4B68-A83F-261ABF0D5211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A55C5061-DECB-47DD-87C4-E40D6E170D16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A55C5061-DECB-47DD-87C4-E40D6E170D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A55C5061-DECB-47DD-87C4-E40D6E170D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A55C5061-DECB-47DD-87C4-E40D6E170D16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{1E99B696-E5CB-43A4-B108-9B04426AFC0B} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
 		{02447EB4-ADF1-40C5-A6D4-CEC304A8B3B4} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
 		{689EC452-1D1A-4B68-A83F-261ABF0D5211} = {590F6D76-0705-46CE-BE04-3C7D8D2C5E65}
+		{A55C5061-DECB-47DD-87C4-E40D6E170D16} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99DDC05A-38D7-428A-9CF1-5D5AB741650B}

@@ -7,7 +7,7 @@ using System.Data;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace DangKe.Archive.EntityFrameworkCore.Shared
+namespace Laison.Lapis.EntityFrameworkCore.Shared
 {
     /// <summary>
     /// EntityFrameworkCore扩展类
