@@ -1,2 +1,2 @@
 # Lapis.Framework
-fdsf 
+A middle platform that provider variout business modules and common components
