@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Version>0.1.0</Version>
+    <PackageVersion>0.1.0</PackageVersion>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Laison Team</Authors>
+    <Copyright></Copyright>
+    <Description></Description>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <AbpProjectType>module</AbpProjectType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All" /> -->
+  </ItemGroup>
+
+</Project>

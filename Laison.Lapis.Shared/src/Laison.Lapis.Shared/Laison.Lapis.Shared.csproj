@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+  
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Laison.Lapis.Shared</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extensions\ArrayExtensions.cs" />
+    <Compile Remove="Extensions\BooleanExtensions.cs" />
+    <Compile Remove="Extensions\ByteExtensions.cs" />
+    <Compile Remove="Extensions\CollectionExtensions.cs" />
+    <Compile Remove="Extensions\ExceptionExtensions.cs" />
+    <Compile Remove="Extensions\ExpressionExtensions.cs" />
+    <Compile Remove="Extensions\NameValueCollectionExtensions.cs" />
+    <Compile Remove="Extensions\ObjectExtensions.cs" />
+    <Compile Remove="Extensions\ParamterCheckExtensions.cs" />
+    <Compile Remove="Extensions\StringBuilderExtensions.cs" />
+    <Compile Remove="Extensions\StringExtensions.cs" />
+    <Compile Remove="Extensions\TypeExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.Odbc" Version="5.0.0" />
+    <PackageReference Include="System.Data.OleDb" Version="5.0.0" />
+    <PackageReference Include="Volo.Abp.Security" Version="4.2.2" />
+  </ItemGroup>
+
+</Project>

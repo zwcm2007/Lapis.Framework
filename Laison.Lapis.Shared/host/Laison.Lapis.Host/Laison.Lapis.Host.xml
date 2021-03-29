@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Laison.Lapis.Host</name>
+    </assembly>
+    <members>
+        <member name="T:Laison.Lapis.Host.Sample2Controller">
+            <summary>
+            Sample2Controller
+            </summary>
+        </member>
+        <member name="M:Laison.Lapis.Host.Sample2Controller.#ctor">
+            <summary>
+            /
+            </summary>
+        </member>
+        <member name="M:Laison.Lapis.Host.Sample2Controller.test(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="formFile">文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:Laison.Lapis.Host.Sample3Controller.BatchInsertAsync">
+            <summary>
+            批量插入
+            </summary>
+        </member>
+        <member name="M:Laison.Lapis.Host.Sample3Controller.BatchInsertAsync2">
+            <summary>
+            批量插入
+            </summary>
+        </member>
+        <member name="M:Laison.Lapis.Host.Sample3Controller.BatchInsertAsync3">
+            <summary>
+            批量插入
+            </summary>
+        </member>
+        <member name="M:Laison.Lapis.Host.SampleController.GetAsync">
+            <summary>
+            返回无结果的数据
+            </summary>
+        </member>
+        <member name="P:Laison.Lapis.Host.ReturnResult.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Laison.Lapis.Host.ReturnResult.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="M:Laison.Lapis.Host.LapisHostModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
+             <summary>
+            ConfigureServices
+             </summary>
+             <param name="context"></param>
+        </member>
+        <member name="M:Laison.Lapis.Host.LapisHostModule.OnApplicationInitialization(Volo.Abp.ApplicationInitializationContext)">
+            <summary>
+            OnApplicationInitialization
+            </summary>
+            <param name="context"></param>
+        </member>
+    </members>
+</doc>

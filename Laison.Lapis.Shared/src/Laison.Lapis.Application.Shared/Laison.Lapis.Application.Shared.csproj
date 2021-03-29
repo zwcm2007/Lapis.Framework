@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+  
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Laison.Lapis.Application.Shared</RootNamespace>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="User\**" />
+    <EmbeddedResource Remove="User\**" />
+    <None Remove="User\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="3.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Laison.Lapis.Shared\Laison.Lapis.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
