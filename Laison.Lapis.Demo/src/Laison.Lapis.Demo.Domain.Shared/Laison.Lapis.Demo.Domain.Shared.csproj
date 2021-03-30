@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Laison.Lapis.Demo.Domain</RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Validation" Version="4.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Volo.Abp.Ddd.Domain">
+      <HintPath>..\..\..\..\..\framework\src\Volo.Abp.Ddd.Domain\bin\Debug\netstandard2.0\Volo.Abp.Ddd.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
