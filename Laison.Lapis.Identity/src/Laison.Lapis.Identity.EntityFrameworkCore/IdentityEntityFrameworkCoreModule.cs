@@ -19,7 +19,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
                 options.AddDefaultRepositories(includeAllEntities: true);
 
                 // Add custom repositories
-                options.AddRepository<Order, OrderRepository>();
+                options.AddRepository<User, UserRepository>();
             });
         }
     }

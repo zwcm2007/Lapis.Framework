@@ -10,7 +10,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
     public interface IIdentityDbContext : IEfCoreDbContext
     {
         // Add DbSet for each Aggregate Root
-        DbSet<Order> Orders { get; }
+        DbSet<User> Orders { get; }
         
     }
 }

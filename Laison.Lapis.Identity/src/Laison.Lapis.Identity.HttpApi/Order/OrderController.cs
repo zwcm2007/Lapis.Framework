@@ -8,23 +8,23 @@ namespace Laison.Lapis.Identity.HttpApi
 {
     [RemoteService]
     [Route("api/Identity/order")]
-    public class OrderController : IdentityController, IOrderAppService
+    public class OrderController : IdentityController, IUserAppService
     {
-        private readonly IOrderAppService _orderAppService;
+        private readonly IUserAppService _orderAppService;
 
-        public OrderController(IOrderAppService orderAppService)
+        public OrderController(IUserAppService orderAppService)
         {
             _orderAppService = orderAppService;
         }
 
         [HttpGet]
-        public Task<OrderDto> GetOrderDetailsAsync([FromQuery] Guid id)
+        public Task<UserDto> GetOrderDetailsAsync([FromQuery] Guid id)
         {
             return _orderAppService.GetOrderDetailsAsync(id);
         }
 
         [HttpPost]
-        public Task CreateOrderAsync(CreateOrderInput input)
+        public Task CreateOrderAsync(CreateUserInput input)
         {
             return _orderAppService.CreateOrderAsync(input);
         }

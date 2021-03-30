@@ -7,13 +7,13 @@ using Volo.Abp.Domain.Repositories;
 namespace Laison.Lapis.Identity.Domain.IRepositories
 {
     /// <summary>
-    /// An interface for order repository
+    /// An interface for user repository
     /// </summary>
-    public interface IOrderRepository : IBasicRepository<Order, Guid>
+    public interface IUserRepository : IBasicRepository<User, Guid>
     {
 
-        Task<Order> GetOrderAsync(Guid id);
+        //Task<User> GetOrderAsync(Guid id);
 
-        Task<List<Order>> GetOrdersAsync(Guid customerId);
+        //Task<List<User>> GetOrdersAsync(Guid customerId);
     }
 }

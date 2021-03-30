@@ -10,7 +10,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
     public class IdentityDbContext : AbpDbContext<IdentityDbContext>, IIdentityDbContext
     {
         // Add DbSet for each Aggregate Root
-        public DbSet<Order> Orders { get; set; }  // Todo: get or set ?
+        public DbSet<User> Orders { get; set; }  // Todo: get or set ?
 
         public IdentityDbContext(DbContextOptions<IdentityDbContext> options)
             : base(options)
