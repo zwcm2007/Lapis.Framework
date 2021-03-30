@@ -14,10 +14,9 @@ foreach($solution in $solutions){
             # Get the projectName
             $projectName = $project.Substring($project.LastIndexOf("/") + 1)
     
-            Set-Location $nupkgsFolder
+            Set-Location $distFolder
             # Push
-            & dotnet nuget push ($projectName + "." + $version + ".nupkg") -s http://32v2537v11.zicp.vip:24388/nuget --api-key "dangke123" 
-            #& dotnet nuget push ($projectName + "." + $version + ".nupkg") -s http://192.168.0.5:9000/nuget --api-key "dangke123" 
+            & dotnet nuget push ($projectName + "." + $version + ".nupkg") -s http://localhost:9000/v3/index.json --api-key "123" 
        }
     }
 }

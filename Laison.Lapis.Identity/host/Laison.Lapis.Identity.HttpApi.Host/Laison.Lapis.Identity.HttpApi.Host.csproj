@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Laison.Lapis.Identity</RootNamespace>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <UserSecretsId>Laison.Lapis.Identity-c2d31439-b723-48e2-b061-5ebd7aeb6010</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Laison.Lapis.Host.Shared" Version="0.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.*" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.MySQL" Version="4.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Laison.Lapis.Identity.HttpApi\Laison.Lapis.Identity.HttpApi.csproj" />
+    <ProjectReference Include="..\..\src\Laison.Lapis.Identity.Application\Laison.Lapis.Identity.Application.csproj" />
+	  <ProjectReference Include="..\..\src\Laison.Lapis.Identity.EntityFrameworkCore\Laison.Lapis.Identity.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+</Project>
