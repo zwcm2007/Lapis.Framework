@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Laison.Lapis.Shared\Laison.Lapis.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
 </Project>

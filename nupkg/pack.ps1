@@ -29,7 +29,7 @@ foreach($solution in $solutions){
         # Copy nuget package
         $projectName = $project.Substring($project.LastIndexOf("/") + 1)
         $projectPackPath = Join-Path $projectFolder ("/bin/Release/" + $projectName + ".*.nupkg")
-        Move-Item $projectPackPath $nupkgsFolder -Force
+        Move-Item $projectPackPath $distFolder -Force
     }
 
 }
