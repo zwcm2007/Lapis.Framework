@@ -1,5 +1,5 @@
 using IdentityModel;
-using Laison.Lapis.HttpApi.Shared;
+using Laison.Lapis.Shared.HttpApi;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;

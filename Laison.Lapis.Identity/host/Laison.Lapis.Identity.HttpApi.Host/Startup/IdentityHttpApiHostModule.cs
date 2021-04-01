@@ -1,6 +1,7 @@
 using Laison.Lapis.Identity.Application;
 using Laison.Lapis.Identity.EntityFrameworkCore;
 using Laison.Lapis.Identity.HttpApi;
+using Laison.Lapis.Shared.Host;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore;
@@ -9,7 +10,7 @@ using Volo.Abp.Modularity;
 namespace Laison.Lapis.Identity
 {
     [DependsOn(
-        //typeof(LapisHostSharedModule),
+        typeof(LapisSharedHostModule),
         typeof(LapisIdentityApplicationModule),
         typeof(LapisIdentityEntityFrameworkCoreModule),
         typeof(LapisIdentityHttpApiModule)

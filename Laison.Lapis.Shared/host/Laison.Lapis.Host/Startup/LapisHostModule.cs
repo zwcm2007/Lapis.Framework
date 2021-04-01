@@ -1,4 +1,4 @@
-using Laison.Lapis.Host.Shared;
+using Laison.Lapis.Shared.Host;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp;
 using Volo.Abp.Modularity;
@@ -6,7 +6,7 @@ using Volo.Abp.Modularity;
 namespace Laison.Lapis.Host
 {
     [DependsOn(
-        typeof(LapisHostSharedModule)
+        typeof(LapisSharedHostModule)
         )]
     public class LapisHostModule : AbpModule
     {

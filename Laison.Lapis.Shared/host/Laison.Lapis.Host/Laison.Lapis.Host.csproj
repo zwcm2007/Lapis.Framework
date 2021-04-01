@@ -25,7 +25,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Laison.Lapis.Shared\Laison.Lapis.Shared.csproj" />
+    <ProjectReference Include="..\..\src\Laison.Lapis.Shared.Host\Laison.Lapis.Shared.Host.csproj" />
+    <ProjectReference Include="..\..\src\Laison.Lapis.Shared.HttpApi\Laison.Lapis.Shared.HttpApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

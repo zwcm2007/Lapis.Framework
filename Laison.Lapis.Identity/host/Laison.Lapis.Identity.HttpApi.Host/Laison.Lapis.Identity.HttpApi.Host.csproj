@@ -18,6 +18,7 @@
     <ProjectReference Include="..\..\src\Laison.Lapis.Identity.HttpApi\Laison.Lapis.Identity.HttpApi.csproj" />
     <ProjectReference Include="..\..\src\Laison.Lapis.Identity.Application\Laison.Lapis.Identity.Application.csproj" />
 	  <ProjectReference Include="..\..\src\Laison.Lapis.Identity.EntityFrameworkCore\Laison.Lapis.Identity.EntityFrameworkCore.csproj" />
+	  <ProjectReference Include="..\..\..\Laison.Lapis.Shared\src\Laison.Lapis.Shared.Host\Laison.Lapis.Shared.Host.csproj" />
   </ItemGroup>
 
   <ItemGroup>
