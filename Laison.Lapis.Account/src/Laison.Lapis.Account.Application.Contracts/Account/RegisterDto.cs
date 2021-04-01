@@ -1,6 +1,6 @@
 ﻿namespace Laison.Lapis.Account.Application.Contracts
 {
-    public class OrderDto
+    public class RegisterDto
     {
         public int Value { get; set; }
     }

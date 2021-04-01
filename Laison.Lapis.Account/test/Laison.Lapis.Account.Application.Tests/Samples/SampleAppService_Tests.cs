@@ -7,11 +7,11 @@ namespace Laison.Lapis.Account.Samples
 {
     public class SampleAppService_Tests : AccountApplicationTestBase
     {
-        private readonly IOrderAppService _orderAppService;
+        private readonly IAccountAppService _orderAppService;
 
         public SampleAppService_Tests()
         {
-            _orderAppService = GetRequiredService<IOrderAppService>();
+            _orderAppService = GetRequiredService<IAccountAppService>();
         }
 
         //[Fact]

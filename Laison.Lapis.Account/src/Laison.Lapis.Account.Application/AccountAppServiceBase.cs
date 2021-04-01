@@ -2,9 +2,9 @@
 
 namespace Laison.Lapis.Account.Application
 {
-    public abstract class AccountAppService : ApplicationService
+    public abstract class AccountAppServiceBase : ApplicationService
     {
-        protected AccountAppService()
+        protected AccountAppServiceBase()
         {
             ObjectMapperContext = typeof(AccountApplicationModule);
         }

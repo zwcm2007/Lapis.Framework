@@ -1,11 +1,19 @@
-﻿using Volo.Abp.AspNetCore.Mvc;
+﻿using Laison.Lapis.Account.Application.Contracts;
+using Microsoft.AspNetCore.Mvc;
+using Volo.Abp;
+using Volo.Abp.AspNetCore.Mvc;
 
 namespace Laison.Lapis.Account.HttpApi
 {
-    public abstract class AccountController : AbpController
+    [RemoteService]
+    [Route("api/account")]
+    public class AccountController : AbpController, IAccountAppService
     {
-        protected AccountController()
+        private readonly IAccountAppService _accountAppService;
+
+        public AccountController(IAccountAppService accountAppService)
         {
+            _accountAppService = accountAppService;
         }
     }
 }
