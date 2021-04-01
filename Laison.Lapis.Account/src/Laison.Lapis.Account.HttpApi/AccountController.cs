@@ -17,14 +17,18 @@ namespace Laison.Lapis.Account.HttpApi
             _accountAppService = accountAppService;
         }
 
+        [HttpPost]
+        [Route("login")]
         public Task<UserDto> LoginAsync(LoginDto input)
         {
-            throw new System.NotImplementedException();
+            return _accountAppService.LoginAsync(input);
         }
 
+        [HttpPost]
+        [Route("reset-password")]
         public Task ResetPasswordAsync(ResetPasswordDto input)
         {
-            throw new System.NotImplementedException();
+            return _accountAppService.ResetPasswordAsync(input);
         }
     }
 }
