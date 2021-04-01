@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace Laison.Lapis.Host.Shared
+namespace Laison.Lapis.Shared.Host
 {
     public class HomeController : AbpController
     {

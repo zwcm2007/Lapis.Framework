@@ -11,7 +11,7 @@ using Volo.Abp.ExceptionHandling;
 using Volo.Abp.Http;
 using Volo.Abp.Json;
 
-namespace Laison.Lapis.Host.Shared
+namespace Laison.Lapis.Shared.Host
 {
     /// <summary>
     /// 自定义异常过滤器

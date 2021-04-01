@@ -1,7 +1,7 @@
 using System;
 using Volo.Abp.Http;
 
-namespace Laison.Lapis.Host.Shared
+namespace Laison.Lapis.Shared.Host
 {
     /// <summary>
     /// This class is used to create standard responses for AJAX/remote requests.

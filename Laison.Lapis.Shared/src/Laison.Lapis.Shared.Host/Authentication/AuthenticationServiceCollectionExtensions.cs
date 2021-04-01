@@ -5,7 +5,7 @@ using System;
 using System.Text;
 using Volo.Abp.Security.Claims;
 
-namespace Laison.Lapis.Host.Shared
+namespace Laison.Lapis.Shared.Host
 {
     public static class AuthenticationServiceCollectionExtensions
     {

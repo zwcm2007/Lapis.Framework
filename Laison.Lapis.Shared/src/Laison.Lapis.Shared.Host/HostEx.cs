@@ -5,7 +5,7 @@ using Serilog;
 using Serilog.Events;
 using System;
 
-namespace Laison.Lapis.Host.Shared
+namespace Laison.Lapis.Shared.Host
 {
     public class HostEx
     {

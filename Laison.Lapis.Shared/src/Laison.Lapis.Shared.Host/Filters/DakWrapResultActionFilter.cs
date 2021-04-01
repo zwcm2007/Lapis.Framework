@@ -5,7 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
 
-namespace Laison.Lapis.Host.Shared
+namespace Laison.Lapis.Shared.Host
 {
     /// <summary>
     /// 自定义动作过滤器

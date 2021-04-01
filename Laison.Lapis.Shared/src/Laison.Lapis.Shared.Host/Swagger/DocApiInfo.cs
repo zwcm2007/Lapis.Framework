@@ -1,4 +1,4 @@
-﻿namespace Laison.Lapis.Host.Shared
+﻿namespace Laison.Lapis.Shared.Host
 {
     public class DocApiInfo
     {

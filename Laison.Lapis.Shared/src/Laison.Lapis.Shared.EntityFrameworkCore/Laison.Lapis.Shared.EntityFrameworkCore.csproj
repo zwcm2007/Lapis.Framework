@@ -4,7 +4,7 @@
   
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Laison.Lapis.EntityFrameworkCore.Shared</RootNamespace>
+    <RootNamespace>Laison.Lapis.Shared.EntityFrameworkCore</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

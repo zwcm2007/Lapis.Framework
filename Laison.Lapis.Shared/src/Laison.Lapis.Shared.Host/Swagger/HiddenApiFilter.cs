@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 
-namespace Laison.Lapis.Host.Shared
+namespace Laison.Lapis.Shared.Host
 {
     /// <summary>
     /// 隐藏接口，不生成到swagger文档展示（Swashbuckle.AspNetCore 5.0.0）

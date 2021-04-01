@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Http;
 
-namespace Laison.Lapis.Host.Shared
+namespace Laison.Lapis.Shared.Host
 {
     public abstract class AjaxResponseBase
     {
