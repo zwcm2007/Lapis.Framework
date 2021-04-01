@@ -20,6 +20,14 @@ namespace Laison.Lapis.Account.Application
             _userRepository = userRepository;
         }
 
+        public Task<UserDto> LoginAsync(LoginDto input)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Task ResetPasswordAsync(ResetPasswordDto input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
