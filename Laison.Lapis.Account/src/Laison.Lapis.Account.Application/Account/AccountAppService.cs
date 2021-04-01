@@ -27,49 +27,16 @@ namespace Laison.Lapis.Account.Application
                 throw new BusinessException("登录用户不存在");
             }
 
-            if (user.che)
+            if (!user.CheckPassword(input.Password))
             {
                 throw new UserFriendlyException("密码不正确");
             }
 
             return new UserLoginOutput
             {
-                AccessToken = GenerateJwt(user),
+                AccessToken = JwtHelper.GenerateToken(user, Configuration),
                 Profile = ObjectMapper.Map<User, ProfileDto>(user)
             };
-        }
-
-        private string GenerateJwt(User user)
-        {
-            return null;
-            //var key = Configuration["Jwt:IssuerSigningKey"];
-            //var issuer = Configuration["Jwt:ValidIssuer"];
-            //var audience = Configuration["Jwt:ValidAudience"];
-            //var hours = Convert.ToInt32(Configuration["Jwt:ValidHours"]);
-
-            //var claims = new List<Claim>()
-            //{
-            //    new Claim(AbpClaimTypes.UserId, user.Id.ToString()),
-            //    new Claim(AbpClaimTypes.UserName, user.Name ?? "未知"),
-            //    new Claim("AccountId", user.AccountId),
-            //    new Claim(AbpClaimTypes.PhoneNumber, user.Mobile ?? ""),
-            //    new Claim(AbpClaimTypes.Email, user.Email?? ""),
-            //    new Claim(JwtClaimTypes.Issuer, issuer),
-            //    new Claim(JwtClaimTypes.Audience, audience)
-            //};
-
-            //var tokenHandler = new JwtSecurityTokenHandler();
-            //var expiresAt = DateTime.UtcNow.AddHours(hours);
-            //var tokenDescriptor = new SecurityTokenDescriptor
-            //{
-            //    Subject = new ClaimsIdentity(claims),
-            //    Expires = expiresAt,
-            //    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)), SecurityAlgorithms.HmacSha256Signature)
-            //};
-
-            //var token = tokenHandler.CreateToken(tokenDescriptor);
-            //var tokenString = tokenHandler.WriteToken(token);
-            //return tokenString;
         }
 
         public Task ResetPasswordAsync(ResetPasswordDto input)

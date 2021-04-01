@@ -1,6 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Laison.Lapis.Account.Domain;
-using Laison.Lapis.Account.Domain.Entities;
+﻿using Laison.Lapis.Account.Domain;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 

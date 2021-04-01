@@ -1,6 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Laison.Lapis.Account.Domain;
-using Laison.Lapis.Account.Domain.Entities;
+﻿using Laison.Lapis.Account.Domain;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -10,7 +9,7 @@ namespace Laison.Lapis.Account.EntityFrameworkCore
     public class AccountDbContext : AbpDbContext<AccountDbContext>, IAccountDbContext
     {
         // Add DbSet for each Aggregate Root
-        public DbSet<Order> Orders { get; set; }  // Todo: get or set ?
+        //public DbSet<Order> Orders { get; set; }  // Todo: get or set ?
 
         public AccountDbContext(DbContextOptions<AccountDbContext> options)
             : base(options)
