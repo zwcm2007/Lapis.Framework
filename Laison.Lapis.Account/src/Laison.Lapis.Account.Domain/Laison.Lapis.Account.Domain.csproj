@@ -12,8 +12,4 @@
     <ProjectReference Include="..\Laison.Lapis.Account.Domain.Shared\Laison.Lapis.Account.Domain.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

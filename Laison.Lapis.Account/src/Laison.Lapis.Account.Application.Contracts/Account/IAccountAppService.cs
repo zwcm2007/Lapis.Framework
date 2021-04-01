@@ -6,7 +6,7 @@ namespace Laison.Lapis.Account.Application.Contracts
 {
     public interface IAccountAppService : IApplicationService
     {
-        Task<UserDto> LoginAsync(LoginDto input);
+        Task<UserLoginOutput> LoginAsync(UserLoginInput input);
 
         Task ResetPasswordAsync(ResetPasswordDto input);
 

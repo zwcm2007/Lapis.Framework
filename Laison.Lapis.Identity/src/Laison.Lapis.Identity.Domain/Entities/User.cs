@@ -1,6 +1,7 @@
 ﻿using Laison.Lapis.Identity.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
+using Volo.Abp;
 using Volo.Abp.Auditing;
 using Volo.Abp.Domain.Entities;
 
@@ -15,6 +16,11 @@ namespace Laison.Lapis.Identity.Domain.Entities
         /// 姓名
         /// </summary>
         public string Name { get; protected set; }
+
+        /// <summary>
+        /// 密码
+        /// </summary>
+        public string Password { get; set; }
 
         /// <summary>
         /// 性别
@@ -44,6 +50,26 @@ namespace Laison.Lapis.Identity.Domain.Entities
         {
             Id = id;
             Name = name;
+        }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="oldPwd"></param>
+        /// <param name="newPwd"></param>
+        public void ChangePassword(string oldPwd, string newPwd)
+        {
+            if (oldPwd.ToMd5() != Password)
+            {
+                throw new UserFriendlyException("原密码不正确");
+            }
+
+            if (newPwd.ToMd5() == Password)
+            {
+                throw new UserFriendlyException("新密码和原密码相同");
+            }
+
+            Password = newPwd.ToMd5();
         }
     }
 }

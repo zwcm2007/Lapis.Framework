@@ -19,7 +19,7 @@ namespace Laison.Lapis.Account.HttpApi
 
         [HttpPost]
         [Route("login")]
-        public Task<UserDto> LoginAsync(LoginDto input)
+        public Task<UserLoginOutput> LoginAsync(UserLoginInput input)
         {
             return _accountAppService.LoginAsync(input);
         }

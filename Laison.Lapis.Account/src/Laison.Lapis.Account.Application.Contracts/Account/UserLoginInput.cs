@@ -1,6 +1,6 @@
 ﻿namespace Laison.Lapis.Account.Application.Contracts
 {
-    public class LoginDto
+    public class UserLoginInput
     {
         public string UserName { get; set; }
 
