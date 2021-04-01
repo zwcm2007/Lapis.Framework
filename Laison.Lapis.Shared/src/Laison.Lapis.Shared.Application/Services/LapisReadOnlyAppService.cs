@@ -5,16 +5,16 @@ using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
 
-namespace Laison.Lapis.Application.Shared
+namespace Laison.Lapis.Shared.Application
 {
     /// <summary>
     /// ReadOnly应用服务
     /// </summary>
-    public abstract class ArchiveReadOnlyAppService<TEntity, TEntityDto, TKey> : ArchiveReadOnlyAppService<TEntity, TEntityDto, TKey, PagedAndSortedResultRequestDto>
+    public abstract class LapisReadOnlyAppService<TEntity, TEntityDto, TKey> : ArchiveReadOnlyAppService<TEntity, TEntityDto, TKey, PagedAndSortedResultRequestDto>
         where TEntity : class, IEntity<TKey>
         where TEntityDto : IEntityDto<TKey>
     {
-        protected ArchiveReadOnlyAppService(IRepository<TEntity, TKey> repository)
+        protected LapisReadOnlyAppService(IRepository<TEntity, TKey> repository)
             : base(repository)
         {
         }

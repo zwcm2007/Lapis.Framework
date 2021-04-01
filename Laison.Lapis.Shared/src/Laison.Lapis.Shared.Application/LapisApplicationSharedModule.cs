@@ -1,7 +1,7 @@
 ﻿using Laison.Lapis.Shared;
 using Volo.Abp.Modularity;
 
-namespace Laison.Lapis.Application.Shared
+namespace Laison.Lapis.Shared.Application
 {
     [DependsOn(
         typeof(LapisSharedModule)

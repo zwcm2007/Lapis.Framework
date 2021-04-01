@@ -2,12 +2,12 @@
 using Microsoft.Extensions.Configuration;
 using Volo.Abp.Application.Services;
 
-namespace Laison.Lapis.Application.Shared
+namespace Laison.Lapis.Shared.Application
 {
     /// <summary>
     /// 应用服务基类
     /// </summary>
-    public abstract class ArchiveAppService : ApplicationService
+    public abstract class LapisAppService : ApplicationService
     {
         protected new ICurrentUser CurrentUser => LazyGetRequiredService(ref _currentUser);
         private ICurrentUser _currentUser;
@@ -15,7 +15,7 @@ namespace Laison.Lapis.Application.Shared
         protected IConfiguration Configuration => LazyGetRequiredService(ref _configuration);
         private IConfiguration _configuration;
 
-        protected ArchiveAppService()
+        protected LapisAppService()
         {
         }
     }
