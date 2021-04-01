@@ -17,9 +17,6 @@ namespace Laison.Lapis.Account.EntityFrameworkCore
             context.Services.AddAbpDbContext<AccountDbContext>(options =>
             {
                 options.AddDefaultRepositories(includeAllEntities: true);
-
-                // Add custom repositories
-                options.AddRepository<Order, OrderRepository>();
             });
         }
     }

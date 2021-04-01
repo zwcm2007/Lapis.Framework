@@ -27,7 +27,7 @@ namespace Laison.Lapis.Account.Application
                 throw new BusinessException("登录用户不存在");
             }
 
-            if (user.p != input.Password.ToMd5())
+            if (user.Password != input.Password.ToMd5())
             {
                 throw new UserFriendlyException("密码不正确");
             }
