@@ -11,15 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Host.Shared", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Shared", "src\Laison.Lapis.Shared\Laison.Lapis.Shared.csproj", "{77636A27-D1EC-4ED3-B2EF-F71641F3DD53}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Domain.Shared", "src\Laison.Lapis.Domain.Shared\Laison.Lapis.Domain.Shared.csproj", "{1E99B696-E5CB-43A4-B108-9B04426AFC0B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.HttpApi.Shared", "src\Laison.Lapis.HttpApi.Shared\Laison.Lapis.HttpApi.Shared.csproj", "{02447EB4-ADF1-40C5-A6D4-CEC304A8B3B4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Host", "host\Laison.Lapis.Host\Laison.Lapis.Host.csproj", "{689EC452-1D1A-4B68-A83F-261ABF0D5211}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.EntityFrameworkCore.Shared", "src\Laison.Lapis.EntityFrameworkCore.Shared\Laison.Lapis.EntityFrameworkCore.Shared.csproj", "{63B8D598-D1BD-4A51-A09F-52D13978DE3F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Shared.Application", "src\Laison.Lapis.Shared.Application\Laison.Lapis.Shared.Application.csproj", "{9CA2B40E-A80A-4EC7-9837-369603124589}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Shared.HttpApi", "src\Laison.Lapis.Shared.HttpApi\Laison.Lapis.Shared.HttpApi.csproj", "{0B52A49E-66D5-4331-B7C7-A86757D0F506}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,14 +33,6 @@ Global
 		{77636A27-D1EC-4ED3-B2EF-F71641F3DD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77636A27-D1EC-4ED3-B2EF-F71641F3DD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77636A27-D1EC-4ED3-B2EF-F71641F3DD53}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E99B696-E5CB-43A4-B108-9B04426AFC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E99B696-E5CB-43A4-B108-9B04426AFC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E99B696-E5CB-43A4-B108-9B04426AFC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E99B696-E5CB-43A4-B108-9B04426AFC0B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02447EB4-ADF1-40C5-A6D4-CEC304A8B3B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02447EB4-ADF1-40C5-A6D4-CEC304A8B3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02447EB4-ADF1-40C5-A6D4-CEC304A8B3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02447EB4-ADF1-40C5-A6D4-CEC304A8B3B4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{689EC452-1D1A-4B68-A83F-261ABF0D5211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{689EC452-1D1A-4B68-A83F-261ABF0D5211}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{689EC452-1D1A-4B68-A83F-261ABF0D5211}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,6 +45,10 @@ Global
 		{9CA2B40E-A80A-4EC7-9837-369603124589}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CA2B40E-A80A-4EC7-9837-369603124589}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CA2B40E-A80A-4EC7-9837-369603124589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B52A49E-66D5-4331-B7C7-A86757D0F506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B52A49E-66D5-4331-B7C7-A86757D0F506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B52A49E-66D5-4331-B7C7-A86757D0F506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B52A49E-66D5-4331-B7C7-A86757D0F506}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,11 +56,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4F979583-1CCB-4F4D-9CA1-FF3111CD2A5A} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
 		{77636A27-D1EC-4ED3-B2EF-F71641F3DD53} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
-		{1E99B696-E5CB-43A4-B108-9B04426AFC0B} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
-		{02447EB4-ADF1-40C5-A6D4-CEC304A8B3B4} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
 		{689EC452-1D1A-4B68-A83F-261ABF0D5211} = {590F6D76-0705-46CE-BE04-3C7D8D2C5E65}
 		{63B8D598-D1BD-4A51-A09F-52D13978DE3F} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
 		{9CA2B40E-A80A-4EC7-9837-369603124589} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
+		{0B52A49E-66D5-4331-B7C7-A86757D0F506} = {170EBFB8-CBFD-482B-8499-F750BE9555F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99DDC05A-38D7-428A-9CF1-5D5AB741650B}

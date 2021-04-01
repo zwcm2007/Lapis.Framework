@@ -2,10 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace Laison.Lapis.HttpApi.Shared
+namespace Laison.Lapis.Shared.HttpApi
 {
     /// <summary>
-    /// 档案控制器
+    /// LapisController
     /// </summary>
     public class LapisController : AbpController
     {
