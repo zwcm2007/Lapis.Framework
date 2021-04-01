@@ -13,7 +13,7 @@ namespace Laison.Lapis.Account
         typeof(AbpAutofacModule),
         typeof(AbpTestBaseModule),
         typeof(AbpAuthorizationModule),
-        typeof(AccountDomainModule)
+        typeof(LapisAccountDomainModule)
         )]
     public class AccountTestBaseModule : AbpModule
     {

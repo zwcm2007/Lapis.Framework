@@ -10,21 +10,21 @@ using Laison.Lapis.Identity.Domain;
 namespace Laison.Lapis.Account.Application
 {
     [DependsOn(
-        typeof(AccountDomainModule),
+        typeof(LapisAccountDomainModule),
         typeof(LapisAccountApplicationContractsModule),
-        typeof(LapisApplicationSharedModule),
-        typeof(IdentityDomainModule),
+        typeof(LapisSharedApplicationModule),
+        typeof(LapisIdentityDomainModule),
         typeof(AbpDddApplicationModule),
         typeof(AbpAutoMapperModule)
         )]
-    public class AccountApplicationModule : AbpModule
+    public class LapisAccountApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddAutoMapperObjectMapper<AccountApplicationModule>();
+            context.Services.AddAutoMapperObjectMapper<LapisAccountApplicationModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<AccountApplicationModule>(validate: true);
+                options.AddMaps<LapisAccountApplicationModule>(validate: true);
             });
         }
     }

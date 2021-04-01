@@ -10,6 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="4.2.2" />
     <ProjectReference Include="..\Laison.Lapis.Account.Domain\Laison.Lapis.Account.Domain.csproj" />
+	<ProjectReference Include="..\..\..\Laison.Lapis.Identity\src\Laison.Lapis.Identity.EntityFrameworkCore\Laison.Lapis.Identity.EntityFrameworkCore.csproj" />
+
   </ItemGroup>
 
 </Project>

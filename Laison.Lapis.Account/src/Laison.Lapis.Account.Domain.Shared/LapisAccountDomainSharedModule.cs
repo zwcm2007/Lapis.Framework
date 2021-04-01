@@ -7,13 +7,13 @@ namespace Laison.Lapis.Account.Domain
     [DependsOn(
         typeof(AbpValidationModule)
     )]
-    public class AccountDomainSharedModule : AbpModule
+    public class LapisAccountDomainSharedModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<AccountDomainSharedModule>();
+                options.FileSets.AddEmbedded<LapisAccountDomainSharedModule>();
             });
         }
     }

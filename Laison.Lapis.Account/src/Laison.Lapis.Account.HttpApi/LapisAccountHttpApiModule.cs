@@ -8,13 +8,13 @@ namespace Laison.Lapis.Account.HttpApi
     [DependsOn(
         typeof(LapisAccountApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule))]
-    public class AccountHttpApiModule : AbpModule
+    public class LapisAccountHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
-                mvcBuilder.AddApplicationPartIfNotExists(typeof(AccountHttpApiModule).Assembly);
+                mvcBuilder.AddApplicationPartIfNotExists(typeof(LapisAccountHttpApiModule).Assembly);
             });
         }
 

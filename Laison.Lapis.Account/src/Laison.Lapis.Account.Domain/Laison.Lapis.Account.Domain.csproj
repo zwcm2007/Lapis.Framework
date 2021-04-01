@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.2.2" />
     <ProjectReference Include="..\Laison.Lapis.Account.Domain.Shared\Laison.Lapis.Account.Domain.Shared.csproj" />
-	<ProjectReference Include="..\..\..\Laison.Lapis.Shared\src\Laison.Lapis.Shared.Application\Laison.Lapis.Shared.Application.csproj" />
+	<ProjectReference Include="..\..\..\Laison.Lapis.Identity\src\Laison.Lapis.Identity.Domain\Laison.Lapis.Identity.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

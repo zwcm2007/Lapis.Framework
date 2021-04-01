@@ -7,7 +7,7 @@ namespace Laison.Lapis.Account.Application
     {
         protected AccountAppServiceBase()
         {
-            ObjectMapperContext = typeof(AccountApplicationModule);
+            ObjectMapperContext = typeof(LapisAccountApplicationModule);
         }
     }
 }

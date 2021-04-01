@@ -26,9 +26,9 @@ using Volo.Abp.VirtualFileSystem;
 namespace Laison.Lapis.Account
 {
     [DependsOn(
-        typeof(AccountApplicationModule),
-        typeof(AccountEntityFrameworkCoreModule),
-        typeof(AccountHttpApiModule),
+        typeof(LapisAccountApplicationModule),
+        typeof(LapisAccountEntityFrameworkCoreModule),
+        typeof(LapisAccountHttpApiModule),
         typeof(AbpAutofacModule),
         typeof(AbpEntityFrameworkCoreMySQLModule),
         typeof(AbpAspNetCoreSerilogModule),
@@ -52,10 +52,10 @@ namespace Laison.Lapis.Account
             {
                 Configure<AbpVirtualFileSystemOptions>(options =>
                 {
-                    options.FileSets.ReplaceEmbeddedByPhysical<AccountDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Laison.Lapis.Account.Domain.Shared", Path.DirectorySeparatorChar)));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AccountDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Laison.Lapis.Account.Domain", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<LapisAccountDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Laison.Lapis.Account.Domain.Shared", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<LapisAccountDomainModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Laison.Lapis.Account.Domain", Path.DirectorySeparatorChar)));
                     options.FileSets.ReplaceEmbeddedByPhysical<LapisAccountApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Laison.Lapis.Account.Application.Contracts", Path.DirectorySeparatorChar)));
-                    options.FileSets.ReplaceEmbeddedByPhysical<AccountApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Laison.Lapis.Account.Application", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<LapisAccountApplicationModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Laison.Lapis.Account.Application", Path.DirectorySeparatorChar)));
                 });
             }
 

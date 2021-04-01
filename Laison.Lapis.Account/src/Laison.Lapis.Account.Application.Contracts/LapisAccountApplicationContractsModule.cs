@@ -6,7 +6,7 @@ using Laison.Lapis.Account.Domain;
 namespace Laison.Lapis.Account.Application.Contracts
 {
     [DependsOn(
-        typeof(AccountDomainSharedModule),
+        typeof(LapisAccountDomainSharedModule),
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
