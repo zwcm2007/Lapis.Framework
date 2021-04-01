@@ -7,7 +7,7 @@ using System.Data;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Laison.Lapis.EntityFrameworkCore.Shared
+namespace Laison.Lapis.Shared.EntityFrameworkCore
 {
     /// <summary>
     /// EntityFrameworkCore扩展类

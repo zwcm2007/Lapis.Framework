@@ -6,7 +6,7 @@ namespace Laison.Lapis.Shared.Application
     [DependsOn(
         typeof(LapisSharedModule)
     )]
-    public class LapisApplicationSharedModule : AbpModule
+    public class LapisSharedApplicationModule : AbpModule
     {
     }
 }

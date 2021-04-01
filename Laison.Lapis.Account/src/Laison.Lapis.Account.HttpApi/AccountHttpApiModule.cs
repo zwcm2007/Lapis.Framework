@@ -6,7 +6,7 @@ using Volo.Abp.Modularity;
 namespace Laison.Lapis.Account.HttpApi
 {
     [DependsOn(
-        typeof(AccountApplicationContractsModule),
+        typeof(LapisAccountApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule))]
     public class AccountHttpApiModule : AbpModule
     {

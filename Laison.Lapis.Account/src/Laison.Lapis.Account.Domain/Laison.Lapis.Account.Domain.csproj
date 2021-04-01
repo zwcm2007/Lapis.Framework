@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.2.2" />
     <ProjectReference Include="..\Laison.Lapis.Account.Domain.Shared\Laison.Lapis.Account.Domain.Shared.csproj" />
+	<ProjectReference Include="..\..\..\Laison.Lapis.Shared\src\Laison.Lapis.Shared.Application\Laison.Lapis.Shared.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

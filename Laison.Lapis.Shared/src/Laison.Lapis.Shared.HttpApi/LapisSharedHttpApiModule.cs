@@ -6,7 +6,7 @@ namespace Laison.Lapis.Shared.HttpApi
     [DependsOn(
       typeof(LapisSharedModule)
     )]
-    public class LapisHttpApiSharedModule : AbpModule
+    public class LapisSharedHttpApiModule : AbpModule
     {
     }
 }

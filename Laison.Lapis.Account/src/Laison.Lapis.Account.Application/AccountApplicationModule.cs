@@ -4,12 +4,16 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Application;
 using Laison.Lapis.Account.Domain;
 using Laison.Lapis.Account.Application.Contracts;
+using Laison.Lapis.Shared.Application;
+using Laison.Lapis.Identity.Domain;
 
 namespace Laison.Lapis.Account.Application
 {
     [DependsOn(
         typeof(AccountDomainModule),
-        typeof(AccountApplicationContractsModule),
+        typeof(LapisAccountApplicationContractsModule),
+        typeof(LapisApplicationSharedModule),
+        typeof(IdentityDomainModule),
         typeof(AbpDddApplicationModule),
         typeof(AbpAutoMapperModule)
         )]

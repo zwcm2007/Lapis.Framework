@@ -24,7 +24,7 @@ namespace Laison.Lapis.Shared.Host
         typeof(AbpAutofacModule),
         typeof(AbpAspNetCoreSerilogModule)
         )]
-    public class LapisHostSharedModule : AbpModule
+    public class LapisSharedHostModule : AbpModule
     {
         private const string DefaultCorsPolicyName = "Default";
 

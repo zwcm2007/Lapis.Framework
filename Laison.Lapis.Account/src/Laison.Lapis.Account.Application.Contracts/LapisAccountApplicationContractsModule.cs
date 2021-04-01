@@ -10,7 +10,7 @@ namespace Laison.Lapis.Account.Application.Contracts
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
-    public class AccountApplicationContractsModule : AbpModule
+    public class LapisAccountApplicationContractsModule : AbpModule
     {
 
     }

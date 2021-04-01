@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Laison.Lapis.EntityFrameworkCore.Shared
+namespace Laison.Lapis.Shared.EntityFrameworkCore
 {
     /// <summary>
     /// ISqlExecuter
