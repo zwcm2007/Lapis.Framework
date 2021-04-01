@@ -13,12 +13,11 @@ namespace Laison.Lapis.Identity.HttpApi
     {
         private readonly IUserAppService _userAppService;
 
-        public UserController(IUserAppService orderAppService)
+        public UserController(IUserAppService userAppService)
         {
-            _userAppService = orderAppService;
+            _userAppService = userAppService;
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public Task<UserDto> GetUserDetailsAsync([FromQuery] Guid id)
         {
