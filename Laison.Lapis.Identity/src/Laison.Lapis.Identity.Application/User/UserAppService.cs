@@ -20,13 +20,13 @@ namespace Laison.Lapis.Identity.Application
         }
 
         [UnitOfWork]
-        public async Task CreateOrderAsync(CreateUserInput input)
+        public async Task CreateUserAsync(CreateUserInput input)
         {
             var order = new User(GuidGenerator.Create(), input.Name);
             await _userRepository.InsertAsync(order);
         }
 
-        public Task<UserDto> GetOrderDetailsAsync(Guid id)
+        public Task<UserDto> GetUserDetailsAsync(Guid id)
         {
             throw new NotImplementedException();
         }

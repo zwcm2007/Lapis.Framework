@@ -18,15 +18,15 @@ namespace Laison.Lapis.Identity.HttpApi
         }
 
         [HttpGet]
-        public Task<UserDto> GetOrderDetailsAsync([FromQuery] Guid id)
+        public Task<UserDto> GetUserDetailsAsync([FromQuery] Guid id)
         {
-            return _orderAppService.GetOrderDetailsAsync(id);
+            return _orderAppService.GetUserDetailsAsync(id);
         }
 
         [HttpPost]
-        public Task CreateOrderAsync(CreateUserInput input)
+        public Task CreateUserAsync(CreateUserInput input)
         {
-            return _orderAppService.CreateOrderAsync(input);
+            return _orderAppService.CreateUserAsync(input);
         }
     }
 }

@@ -6,8 +6,8 @@ namespace Laison.Lapis.Identity.Application.Contracts
 {
     public interface IUserAppService : IApplicationService
     {
-        Task<UserDto> GetOrderDetailsAsync(Guid id);
+        Task<UserDto> GetUserDetailsAsync(Guid id);
 
-        Task CreateOrderAsync(CreateUserInput input);
+        Task CreateUserAsync(CreateUserInput input);
     }
 }
