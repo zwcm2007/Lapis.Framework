@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Shared.HttpApi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Shared.Host", "src\Laison.Lapis.Shared.Host\Laison.Lapis.Shared.Host.csproj", "{EFE354CC-04E6-4ADE-B96C-9B51E46F7916}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.EntityFrameworkCore.Shared", "src\Laison.Lapis.Shared.EntityFrameworkCore\Laison.Lapis.EntityFrameworkCore.Shared.csproj", "{78A15C65-3DD8-4A0E-9F7E-87ACAD2D2F45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laison.Lapis.Shared.EntityFrameworkCore", "src\Laison.Lapis.Shared.EntityFrameworkCore\Laison.Lapis.Shared.EntityFrameworkCore.csproj", "{78A15C65-3DD8-4A0E-9F7E-87ACAD2D2F45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
