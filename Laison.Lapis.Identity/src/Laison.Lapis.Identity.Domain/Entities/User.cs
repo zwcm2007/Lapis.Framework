@@ -33,7 +33,7 @@ namespace Laison.Lapis.Identity.Domain.Entities
         /// <summary>
         /// 性别
         /// </summary>
-        public Sex Sex { get; protected set; }
+        public Sex? Sex { get; protected set; }
 
         /// <summary>
         /// 地址
@@ -54,10 +54,13 @@ namespace Laison.Lapis.Identity.Domain.Entities
         {
         }
 
-        public User(Guid id, string name)
+        public User(Guid id, string name, string userName, string email, Sex? sex, string phoneNumber)
         {
             Id = id;
             Name = name;
+            UserName = userName;
+            Email = email;
+            PhoneNumber = phoneNumber;
         }
 
         /// <summary>

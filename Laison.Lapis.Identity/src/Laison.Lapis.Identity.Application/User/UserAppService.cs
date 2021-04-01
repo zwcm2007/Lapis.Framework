@@ -22,8 +22,12 @@ namespace Laison.Lapis.Identity.Application
         [UnitOfWork]
         public async Task CreateUserAsync(CreateUserInput input)
         {
-            var order = new User(GuidGenerator.Create(), input.Name);
-            await _userRepository.InsertAsync(order);
+            var user = new User(GuidGenerator.Create(), input.Name, input.UserName,
+                input.Email,
+                input.Sex,
+                input.PhoneNumber);
+
+            await _userRepository.InsertAsync(user);
         }
 
         public Task<UserDto> GetUserDetailsAsync(Guid id)
