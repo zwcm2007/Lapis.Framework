@@ -1,45 +1,13 @@
-﻿using Laison.Lapis.Account.Application.Contracts;
-using Laison.Lapis.Identity.Domain.Entities;
-using Laison.Lapis.Identity.Domain.IRepositories;
+﻿using Laison.Lapis.Identity.Domain.Entities;
 using System;
-using System.Threading.Tasks;
-using Volo.Abp;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Laison.Lapis.Account.Application
 {
-    /// <summary>
-    /// 账号应用服务
-    /// </summary>
-    public class AccountAppService : AccountAppServiceBase, IAccountAppService
+    public static class JwtHelper
     {
-        private readonly IUserRepository _userRepository;
-
-        public AccountAppService(IUserRepository userRepository)
-        {
-            _userRepository = userRepository;
-        }
-
-        public async Task<UserLoginOutput> LoginAsync(UserLoginInput input)
-        {
-            var user = await _userRepository.FindByUserNameAsync(input.UserName);
-            if (user == null)
-            {
-                throw new BusinessException("登录用户不存在");
-            }
-
-            if (user.che)
-            {
-                throw new UserFriendlyException("密码不正确");
-            }
-
-            return new UserLoginOutput
-            {
-                AccessToken = GenerateJwt(user),
-                Profile = ObjectMapper.Map<User, ProfileDto>(user)
-            };
-        }
-
-        private string GenerateJwt(User user)
+        private string GenerateJwtForUser(User user)
         {
             return null;
             //var key = Configuration["Jwt:IssuerSigningKey"];
@@ -70,11 +38,6 @@ namespace Laison.Lapis.Account.Application
             //var token = tokenHandler.CreateToken(tokenDescriptor);
             //var tokenString = tokenHandler.WriteToken(token);
             //return tokenString;
-        }
-
-        public Task ResetPasswordAsync(ResetPasswordDto input)
-        {
-            throw new NotImplementedException();
         }
     }
 }

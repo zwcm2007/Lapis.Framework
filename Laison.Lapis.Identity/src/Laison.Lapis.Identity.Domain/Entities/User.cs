@@ -82,5 +82,17 @@ namespace Laison.Lapis.Identity.Domain.Entities
 
             Password = newPwd.ToMd5();
         }
+
+        /// <summary>
+        /// 验证密码
+        /// </summary>
+        public bool CheckPassword(string pwd)
+        {
+            if (Password != pwd.ToMd5())
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
