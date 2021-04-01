@@ -6,11 +6,11 @@ using Laison.Lapis.Identity.Domain;
 namespace Laison.Lapis.Identity.Application.Contracts
 {
     [DependsOn(
-        typeof(IdentityDomainSharedModule),
+        typeof(LapisIdentityDomainSharedModule),
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
-    public class IdentityApplicationContractsModule : AbpModule
+    public class LapisIdentityApplicationContractsModule : AbpModule
     {
 
     }

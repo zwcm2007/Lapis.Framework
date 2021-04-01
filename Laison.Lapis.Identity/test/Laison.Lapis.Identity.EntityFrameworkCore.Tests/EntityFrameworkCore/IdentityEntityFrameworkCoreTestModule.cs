@@ -10,7 +10,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
 {
     [DependsOn(
         typeof(IdentityTestBaseModule),
-        typeof(IdentityEntityFrameworkCoreModule),
+        typeof(LapisIdentityEntityFrameworkCoreModule),
         typeof(AbpEntityFrameworkCoreSqliteModule)
         )]
     public class IdentityEntityFrameworkCoreTestModule : AbpModule

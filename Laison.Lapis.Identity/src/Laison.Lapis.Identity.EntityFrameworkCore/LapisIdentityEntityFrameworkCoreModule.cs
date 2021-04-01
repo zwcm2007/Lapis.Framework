@@ -7,10 +7,10 @@ using Volo.Abp.Modularity;
 namespace Laison.Lapis.Identity.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(IdentityDomainModule),
+        typeof(LapisIdentityDomainModule),
         typeof(AbpEntityFrameworkCoreModule)
     )]
-    public class IdentityEntityFrameworkCoreModule : AbpModule
+    public class LapisIdentityEntityFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

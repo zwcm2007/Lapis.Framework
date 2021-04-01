@@ -13,7 +13,7 @@ namespace Laison.Lapis.Identity
         typeof(AbpAutofacModule),
         typeof(AbpTestBaseModule),
         typeof(AbpAuthorizationModule),
-        typeof(IdentityDomainModule)
+        typeof(LapisIdentityDomainModule)
         )]
     public class IdentityTestBaseModule : AbpModule
     {

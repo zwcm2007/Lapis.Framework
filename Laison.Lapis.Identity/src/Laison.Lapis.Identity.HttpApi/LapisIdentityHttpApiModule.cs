@@ -8,15 +8,15 @@ using Volo.Abp.Modularity;
 namespace Laison.Lapis.Identity.HttpApi
 {
     [DependsOn(
-        typeof(IdentityApplicationContractsModule),
+        typeof(LapisIdentityApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule))]
-    public class IdentityHttpApiModule : AbpModule
+    public class LapisIdentityHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
-                mvcBuilder.AddApplicationPartIfNotExists(typeof(IdentityHttpApiModule).Assembly);
+                mvcBuilder.AddApplicationPartIfNotExists(typeof(LapisIdentityHttpApiModule).Assembly);
             });
         }
 

@@ -6,7 +6,7 @@ namespace Laison.Lapis.Identity.Application
     {
         protected IdentityAppService()
         {
-            ObjectMapperContext = typeof(IdentityApplicationModule);
+            ObjectMapperContext = typeof(LapisIdentityApplicationModule);
         }
     }
 }

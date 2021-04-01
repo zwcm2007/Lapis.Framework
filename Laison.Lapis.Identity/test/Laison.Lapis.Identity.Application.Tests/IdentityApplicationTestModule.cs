@@ -4,7 +4,7 @@ using Volo.Abp.Modularity;
 namespace Laison.Lapis.Identity
 {
     [DependsOn(
-        typeof(IdentityApplicationModule),
+        typeof(LapisIdentityApplicationModule),
         typeof(IdentityDomainTestModule)
         )]
     public class IdentityApplicationTestModule : AbpModule

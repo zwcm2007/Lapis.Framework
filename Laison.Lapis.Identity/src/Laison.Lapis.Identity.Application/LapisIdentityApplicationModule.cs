@@ -8,19 +8,19 @@ using Laison.Lapis.Identity.Application.Contracts;
 namespace Laison.Lapis.Identity.Application
 {
     [DependsOn(
-        typeof(IdentityDomainModule),
-        typeof(IdentityApplicationContractsModule),
+        typeof(LapisIdentityDomainModule),
+        typeof(LapisIdentityApplicationContractsModule),
         typeof(AbpDddApplicationModule),
         typeof(AbpAutoMapperModule)
         )]
-    public class IdentityApplicationModule : AbpModule
+    public class LapisIdentityApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddAutoMapperObjectMapper<IdentityApplicationModule>();
+            context.Services.AddAutoMapperObjectMapper<LapisIdentityApplicationModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<IdentityApplicationModule>(validate: true);
+                options.AddMaps<LapisIdentityApplicationModule>(validate: true);
             });
         }
     }

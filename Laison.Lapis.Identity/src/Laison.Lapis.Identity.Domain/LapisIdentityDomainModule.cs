@@ -5,9 +5,9 @@ namespace Laison.Lapis.Identity.Domain
 {
     [DependsOn(
         typeof(AbpDddDomainModule),
-        typeof(IdentityDomainSharedModule)
+        typeof(LapisIdentityDomainSharedModule)
     )]
-    public class IdentityDomainModule : AbpModule
+    public class LapisIdentityDomainModule : AbpModule
     {
 
     }

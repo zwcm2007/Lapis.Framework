@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Laison.Lapis.Host.Shared" Version="0.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.*" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.MySQL" Version="4.2.2" />
   </ItemGroup>
