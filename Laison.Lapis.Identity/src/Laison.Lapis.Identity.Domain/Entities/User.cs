@@ -18,7 +18,7 @@ namespace Laison.Lapis.Identity.Domain.Entities
         /// <summary>
         /// 密码
         /// </summary>
-        public string Password { get; set; }
+        public string Password { get; protected set; }
 
         /// <summary>
         /// 姓名
