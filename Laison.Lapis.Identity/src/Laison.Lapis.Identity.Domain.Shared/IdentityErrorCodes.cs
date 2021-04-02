@@ -2,6 +2,8 @@
 {
     public static class IdentityErrorCodes
     {
-        //Add your business exception error codes here...
+        public const string UserSelfDeletion = "Laison.Lapis.Identity:010001";
+        public const string PasswordIsWrong = "Laison.Lapis.Identity:010002";
+
     }
 }
