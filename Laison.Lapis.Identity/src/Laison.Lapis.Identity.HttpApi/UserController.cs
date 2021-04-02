@@ -1,4 +1,5 @@
 ﻿using Laison.Lapis.Identity.Application.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -22,8 +23,9 @@ namespace Laison.Lapis.Identity.HttpApi
             return _userAppService.FindByUsernameAsync(userName);
         }
 
+        [AllowAnonymous]
         [HttpPost]
-        public Task CreateUserAsync(CreateUserInput input)
+        public Task CreateUserAsync([FromBody] CreateUserInput input)
         {
             return _userAppService.CreateUserAsync(input);
         }

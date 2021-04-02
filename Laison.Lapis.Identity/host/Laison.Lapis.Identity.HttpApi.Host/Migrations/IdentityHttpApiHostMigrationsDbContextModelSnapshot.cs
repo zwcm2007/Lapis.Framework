@@ -31,9 +31,6 @@ namespace Laison.Lapis.Identity.Migrations
                         .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
                         .HasColumnName("ConcurrencyStamp");
 
-                    b.Property<string>("Count")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime(6)")
                         .HasColumnName("CreationTime");
@@ -66,19 +63,54 @@ namespace Laison.Lapis.Identity.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("CreationTime");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256) CHARACTER SET utf8mb4")
+                        .HasColumnName("Email");
+
                     b.Property<string>("ExtraProperties")
                         .HasColumnType("longtext CHARACTER SET utf8mb4")
                         .HasColumnName("ExtraProperties");
 
                     b.Property<string>("Name")
+                        .HasMaxLength(64)
+                        .HasColumnType("varchar(64) CHARACTER SET utf8mb4")
+                        .HasColumnName("Name");
+
+                    b.Property<string>("Password")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("Sex")
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(16)
+                        .HasColumnType("varchar(16) CHARACTER SET utf8mb4")
+                        .HasColumnName("PhoneNumber");
+
+                    b.Property<int?>("Sex")
                         .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256) CHARACTER SET utf8mb4")
+                        .HasColumnName("UserName");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Laison.Lapis.Identity.Domain.Entities.UserRole", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.ToTable("UserRoles");
                 });
 
             modelBuilder.Entity("Laison.Lapis.Identity.Domain.Entities.User", b =>
@@ -106,6 +138,20 @@ namespace Laison.Lapis.Identity.Migrations
                         });
 
                     b.Navigation("Address");
+                });
+
+            modelBuilder.Entity("Laison.Lapis.Identity.Domain.Entities.UserRole", b =>
+                {
+                    b.HasOne("Laison.Lapis.Identity.Domain.Entities.User", null)
+                        .WithMany("Roles")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Laison.Lapis.Identity.Domain.Entities.User", b =>
+                {
+                    b.Navigation("Roles");
                 });
 #pragma warning restore 612, 618
         }
