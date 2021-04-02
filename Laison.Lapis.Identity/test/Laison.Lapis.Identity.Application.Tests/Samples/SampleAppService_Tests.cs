@@ -7,11 +7,11 @@ namespace Laison.Lapis.Identity.Samples
 {
     public class SampleAppService_Tests : IdentityApplicationTestBase
     {
-        private readonly IUserAppService _orderAppService;
+        private readonly IRoleAppService _orderAppService;
 
         public SampleAppService_Tests()
         {
-            _orderAppService = GetRequiredService<IUserAppService>();
+            _orderAppService = GetRequiredService<IRoleAppService>();
         }
 
         //[Fact]

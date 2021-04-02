@@ -2,9 +2,9 @@
 
 namespace Laison.Lapis.Identity.Application
 {
-    public abstract class IdentityAppService : ApplicationService
+    public abstract class IdentityAppServiceBase : ApplicationService
     {
-        protected IdentityAppService()
+        protected IdentityAppServiceBase()
         {
             ObjectMapperContext = typeof(LapisIdentityApplicationModule);
         }

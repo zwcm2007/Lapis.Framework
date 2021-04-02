@@ -1,5 +1,6 @@
 ﻿using Laison.Lapis.Identity.Domain.ValueObjects;
 using System;
+using System.Collections.Generic;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities;
 
@@ -49,6 +50,11 @@ namespace Laison.Lapis.Identity.Domain.Entities
         /// 创建时间
         /// </summary>
         public DateTime CreationTime { get; protected set; }
+
+        /// <summary>
+        /// 所属角色
+        /// </summary>
+        public virtual ICollection<UserRole> Roles { get; protected set; }
 
         protected User()
         {

@@ -15,13 +15,12 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
         {
             builder.ToTable("Users");
             builder.ConfigureByConvention();
-            // primary key
-            builder.HasKey(o => o.Id);
-            // object relations
-            //builder.HasMany(o => o.OrderLines).WithOne(ol => ol.Order).HasForeignKey(ol => ol.OrderId).IsRequired();
+            // 主键
+            builder.HasKey(u => u.Id);
+            // 关系
+            builder.HasMany(u => u.Roles).WithOne().HasForeignKey(ur => ur.UserId).IsRequired();
             //
-
-            //b.Property(u => u.TenantId).HasColumnName(nameof(IUser.TenantId));
+            //builder.Property(u => u.TenantId).HasColumnName(nameof(IUser.TenantId));
             builder.Property(u => u.UserName).IsRequired().HasMaxLength(UserConsts.MaxUserNameLength).HasColumnName(nameof(IUser.UserName));
             builder.Property(u => u.Email).IsRequired().HasMaxLength(UserConsts.MaxEmailLength).HasColumnName(nameof(IUser.Email));
             builder.Property(u => u.Name).HasMaxLength(UserConsts.MaxNameLength).HasColumnName(nameof(IUser.Name));

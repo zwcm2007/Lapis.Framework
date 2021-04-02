@@ -10,7 +10,7 @@ namespace Laison.Lapis.Identity.Application
     /// <summary>
     /// 用户应用服务
     /// </summary>
-    public class UserAppService : IdentityAppService, IUserAppService
+    public class UserAppService : IdentityAppServiceBase, IUserAppService
     {
         private readonly IUserRepository _userRepository;
 
@@ -30,7 +30,7 @@ namespace Laison.Lapis.Identity.Application
             await _userRepository.InsertAsync(user);
         }
 
-        public Task<UserDto> GetUserDetailsAsync(Guid id)
+        public Task<RoleDto> GetUserDetailsAsync(Guid id)
         {
             throw new NotImplementedException();
         }

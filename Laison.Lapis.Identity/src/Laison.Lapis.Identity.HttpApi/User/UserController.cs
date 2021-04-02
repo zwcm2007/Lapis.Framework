@@ -1,5 +1,4 @@
 ﻿using Laison.Lapis.Identity.Application.Contracts;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -19,7 +18,7 @@ namespace Laison.Lapis.Identity.HttpApi
         }
 
         [HttpGet]
-        public Task<UserDto> GetUserDetailsAsync([FromQuery] Guid id)
+        public Task<RoleDto> GetUserDetailsAsync([FromQuery] Guid id)
         {
             return _userAppService.GetUserDetailsAsync(id);
         }

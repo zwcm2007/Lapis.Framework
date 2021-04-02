@@ -16,11 +16,6 @@ namespace Laison.Lapis.Identity.Domain.Entities
         public string Name { get; protected set; }
 
         /// <summary>
-        /// 描述
-        /// </summary>
-        public string Count { get; protected set; }
-
-        /// <summary>
         /// 创建时间
         /// </summary>
         public DateTime CreationTime { get; protected set; }
@@ -29,11 +24,16 @@ namespace Laison.Lapis.Identity.Domain.Entities
         {
         }
 
-        internal Role(Guid id, string name, int count)
+        internal Role(Guid id, string name)
         {
             Id = id;
             Name = name;
 
+        }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}, Name = {Name}";
         }
     }
 }
