@@ -2,6 +2,7 @@
 using Laison.Lapis.Identity.Domain.Entities;
 using Laison.Lapis.Identity.Domain.IRepositories;
 using System.Threading.Tasks;
+using Volo.Abp.Data;
 using Volo.Abp.Uow;
 
 namespace Laison.Lapis.Identity.Application
@@ -21,10 +22,14 @@ namespace Laison.Lapis.Identity.Application
         [UnitOfWork]
         public async Task CreateUserAsync(CreateUserInput input)
         {
-            var user = new User(GuidGenerator.Create(), input.Name, input.UserName,
+            var user = new User(GuidGenerator.Create(), input.UserName, "123456",
+                input.Name,
                 input.Email,
                 input.Sex,
                 input.PhoneNumber);
+
+            user.SetProperty("surname", "冯");
+            user.SetProperty("Country", "China");
 
             await _userRepository.InsertAsync(user);
         }

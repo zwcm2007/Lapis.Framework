@@ -60,11 +60,12 @@ namespace Laison.Lapis.Identity.Domain.Entities
         {
         }
 
-        public User(Guid id, string name, string userName, string email, Sex? sex, string phoneNumber)
+        public User(Guid id, string userName, string password, string name, string email, Sex? sex, string phoneNumber)
         {
             Id = id;
             Name = name;
             UserName = userName;
+            Password = password;
             Email = email;
             PhoneNumber = phoneNumber;
         }
@@ -76,12 +77,12 @@ namespace Laison.Lapis.Identity.Domain.Entities
         /// <param name="newPwd"></param>
         public void ChangePassword(string oldPwd, string newPwd)
         {
-            if (oldPwd.ToMd5() != Password)
+            if (oldPwd != Password)
             {
                 throw new UserFriendlyException("原密码不正确");
             }
 
-            if (newPwd.ToMd5() == Password)
+            if (newPwd == Password)
             {
                 throw new UserFriendlyException("新密码和原密码相同");
             }

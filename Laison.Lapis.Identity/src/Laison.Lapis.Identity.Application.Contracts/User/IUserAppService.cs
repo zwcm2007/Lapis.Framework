@@ -9,5 +9,7 @@ namespace Laison.Lapis.Identity.Application.Contracts
         Task<UserDto> FindByUsernameAsync(string userName);
 
         Task CreateUserAsync(CreateUserInput input);
+
+
     }
 }

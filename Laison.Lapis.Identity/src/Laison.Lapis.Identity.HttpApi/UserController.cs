@@ -23,7 +23,6 @@ namespace Laison.Lapis.Identity.HttpApi
             return _userAppService.FindByUsernameAsync(userName);
         }
 
-        [AllowAnonymous]
         [HttpPost]
         public Task CreateUserAsync([FromBody] CreateUserInput input)
         {

@@ -26,5 +26,8 @@ namespace Laison.Lapis.Identity.Domain.Shared
         /// Default value: 16
         /// </summary>
         public static int MaxPhoneNumberLength { get; set; } = 16;
+
+
+        public static int MaxPasswordLength { get; set; } = 8;
     }
 }
