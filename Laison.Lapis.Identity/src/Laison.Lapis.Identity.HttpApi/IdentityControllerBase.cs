@@ -3,9 +3,9 @@ using Volo.Abp.AspNetCore.Mvc;
 
 namespace Laison.Lapis.Identity.HttpApi
 {
-    public abstract class IdentityController : AbpController
+    public abstract class IdentityControllerBase : AbpController
     {
-        protected IdentityController()
+        protected IdentityControllerBase()
         {
         }
     }
