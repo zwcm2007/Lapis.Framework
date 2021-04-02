@@ -18,9 +18,9 @@ namespace Laison.Lapis.Identity.HttpApi
         }
 
         [HttpGet]
-        public Task<RoleDto> GetUserDetailsAsync([FromQuery] Guid id)
+        public Task<UserDto> FindByUsernameAsync(string userName)
         {
-            return _userAppService.GetUserDetailsAsync(id);
+            return _userAppService.FindByUsernameAsync(userName);
         }
 
         [HttpPost]

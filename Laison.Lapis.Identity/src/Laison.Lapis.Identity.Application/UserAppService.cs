@@ -1,7 +1,6 @@
 ﻿using Laison.Lapis.Identity.Application.Contracts;
 using Laison.Lapis.Identity.Domain.Entities;
 using Laison.Lapis.Identity.Domain.IRepositories;
-using System;
 using System.Threading.Tasks;
 using Volo.Abp.Uow;
 
@@ -30,9 +29,10 @@ namespace Laison.Lapis.Identity.Application
             await _userRepository.InsertAsync(user);
         }
 
-        public Task<RoleDto> GetUserDetailsAsync(Guid id)
+        public async Task<UserDto> FindByUsernameAsync(string userName)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.FindByUserNameAsync(userName);
+            return ObjectMapper.Map<User, UserDto>(user);
         }
     }
 }
