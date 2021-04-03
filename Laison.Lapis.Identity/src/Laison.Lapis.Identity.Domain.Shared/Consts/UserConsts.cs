@@ -6,12 +6,12 @@ namespace Laison.Lapis.Identity.Domain.Shared
         /// Default value: 256
         /// </summary>
         public static int MaxUserNameLength { get; set; } = 256;
-        
+
         /// <summary>
         /// Default value: 64
         /// </summary>
         public static int MaxNameLength { get; set; } = 64;
-        
+
         /// <summary>
         /// Default value: 64
         /// </summary>
@@ -27,7 +27,14 @@ namespace Laison.Lapis.Identity.Domain.Shared
         /// </summary>
         public static int MaxPhoneNumberLength { get; set; } = 16;
 
-
+        /// <summary>
+        ///
+        /// </summary>
         public static int MaxPasswordLength { get; set; } = 8;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public const string DefaultInitPassword = "123456";
     }
 }

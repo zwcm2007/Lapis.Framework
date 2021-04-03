@@ -82,12 +82,7 @@ namespace Laison.Lapis.Identity.Domain.Entities
                 throw new UserFriendlyException("原密码不正确");
             }
 
-            if (newPwd == Password)
-            {
-                throw new UserFriendlyException("新密码和原密码相同");
-            }
-
-            Password = newPwd.ToMd5();
+            Password = newPwd;
         }
 
         /// <summary>

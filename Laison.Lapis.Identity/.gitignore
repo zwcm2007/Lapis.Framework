@@ -252,7 +252,4 @@ paket-files/
 *.sln.iml
 
 # Identity
-host/Laison.Lapis.Identity.IdentityServer/Logs/logs.txt
-host/Laison.Lapis.Identity.HttpApi.Host/Logs/logs.txt
-host/Laison.Lapis.Identity.Web.Host/Logs/logs.txt
-host/Laison.Lapis.Identity.Web.Unified/Logs/logs.txt
+host/Laison.Lapis.Identity.HttpApi.Host/Logs
