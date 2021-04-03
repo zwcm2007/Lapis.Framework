@@ -2,6 +2,8 @@
 {
     public static class AccountErrorCodes
     {
-        //Add your business exception error codes here...
+        public const string UserNotExist = "Laison.Lapis.Acount:1001";
+
+        public const string LoginPasswordError = "Laison.Lapis.Acount:1001";
     }
 }

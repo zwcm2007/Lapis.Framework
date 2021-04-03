@@ -1,4 +1,5 @@
 ﻿using Laison.Lapis.Account.Application.Contracts;
+using Laison.Lapis.Account.Domain;
 using Laison.Lapis.Identity.Domain.Entities;
 using Laison.Lapis.Identity.Domain.IRepositories;
 using System;
@@ -24,12 +25,12 @@ namespace Laison.Lapis.Account.Application
             var user = await _userRepository.FindByUserNameAsync(input.UserName);
             if (user == null)
             {
-                throw new BusinessException("登录用户不存在");
+                throw new UserFriendlyException("登录用户不存在", AccountErrorCodes.UserNotExist);
             }
 
-            if (!user.CheckPassword(input.Password))
+            if (!user.CheckPassword2(input.Password.ToMd5()))
             {
-                throw new UserFriendlyException("密码不正确");
+                throw new UserFriendlyException("密码不正确", AccountErrorCodes.LoginPasswordError);
             }
 
             return new UserLoginOutput

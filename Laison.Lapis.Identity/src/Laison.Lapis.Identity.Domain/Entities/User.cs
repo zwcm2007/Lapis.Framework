@@ -73,28 +73,16 @@ namespace Laison.Lapis.Identity.Domain.Entities
         /// <summary>
         /// 修改密码
         /// </summary>
-        /// <param name="oldPwd"></param>
+        /// <param name="currentPwd"></param>
         /// <param name="newPwd"></param>
-        public void ChangePassword(string oldPwd, string newPwd)
+        public void ChangePassword(string currentPwd, string newPwd)
         {
-            if (oldPwd != Password)
+            if (currentPwd != Password)
             {
-                throw new UserFriendlyException("原密码不正确");
+                throw new UserFriendlyException("原密码不正确", IdentityErrorCodes.CurrentPasswordIsError);
             }
 
             Password = newPwd;
-        }
-
-        /// <summary>
-        /// 验证密码
-        /// </summary>
-        public bool CheckPassword(string pwd)
-        {
-            if (Password != pwd.ToMd5())
-            {
-                return false;
-            }
-            return true;
         }
     }
 }

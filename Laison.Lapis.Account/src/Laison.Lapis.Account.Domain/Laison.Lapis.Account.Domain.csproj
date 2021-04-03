@@ -13,8 +13,4 @@
 	<ProjectReference Include="..\..\..\Laison.Lapis.Identity\src\Laison.Lapis.Identity.Domain\Laison.Lapis.Identity.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
-
 </Project>
