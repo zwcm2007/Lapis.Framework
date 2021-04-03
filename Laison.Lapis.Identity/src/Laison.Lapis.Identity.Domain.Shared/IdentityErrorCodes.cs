@@ -1,4 +1,4 @@
-﻿namespace Laison.Lapis.Identity.Domain
+﻿namespace Laison.Lapis.Identity.Domain.Shared
 {
     public static class IdentityErrorCodes
     {

@@ -1,4 +1,5 @@
-﻿using Laison.Lapis.Identity.Domain.ValueObjects;
+﻿using Laison.Lapis.Identity.Domain.Shared;
+using Laison.Lapis.Identity.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using Volo.Abp;

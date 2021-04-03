@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Domain;
+﻿using Laison.Lapis.Identity.Domain.Shared;
+using Volo.Abp.Domain;
 using Volo.Abp.Modularity;
 
 namespace Laison.Lapis.Identity.Domain

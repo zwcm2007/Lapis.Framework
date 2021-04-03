@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Application.Services;
+﻿using Laison.Lapis.Identity.Domain;
+using Volo.Abp.Application.Services;
 
 namespace Laison.Lapis.Identity.Application
 {
@@ -7,6 +8,7 @@ namespace Laison.Lapis.Identity.Application
         protected IdentityAppServiceBase()
         {
             ObjectMapperContext = typeof(LapisIdentityApplicationModule);
+            LocalizationResource = typeof(IdentityResource);
         }
     }
 }
