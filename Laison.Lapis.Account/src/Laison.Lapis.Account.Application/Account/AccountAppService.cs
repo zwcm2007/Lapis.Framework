@@ -28,7 +28,7 @@ namespace Laison.Lapis.Account.Application
                 throw new UserFriendlyException("登录用户不存在", AccountErrorCodes.UserNotExist);
             }
 
-            if (!user.CheckPassword2(input.Password.ToMd5()))
+            if (!user.CheckPassword(input.Password.ToMd5()))
             {
                 throw new UserFriendlyException("密码不正确", AccountErrorCodes.LoginPasswordError);
             }

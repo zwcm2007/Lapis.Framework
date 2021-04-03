@@ -13,7 +13,7 @@ namespace Laison.Lapis.Account.EntityFrameworkCore
         {
             Check.NotNull(builder, nameof(builder));
 
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            //builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             //var options = new AccountModelBuilderConfigurationOptions(
             //    AccountDbProperties.DbTablePrefix,
