@@ -6,9 +6,9 @@ using Volo.Abp.Modularity;
 namespace Laison.Lapis.Identity.Application.Contracts
 {
     [DependsOn(
-        typeof(LapisIdentityDomainSharedModule),
         typeof(AbpDddApplicationContractsModule),
-        typeof(AbpAuthorizationModule)
+        typeof(AbpAuthorizationModule),
+        typeof(LapisIdentityDomainSharedModule)
         )]
     public class LapisIdentityApplicationContractsModule : AbpModule
     {
