@@ -31,11 +31,11 @@ namespace Laison.Lapis.Host
             var a = Configuration["Jwt:IssuerSigningKey"].ToString();
         }
 
-        [HttpGet("HasException")]
+        [HttpGet("ThrowException")]
         public void Get2Async()
         {
-            //throw new BusinessException("1001", "我是业务异常");
             throw new UserFriendlyException("我是友好异常", "1002");
+            //throw new BusinessException("1001", "我是业务异常");
         }
 
         //[Authorize]

@@ -252,3 +252,4 @@ paket-files/
 *.sln.iml
 /Laison.Lapis.Identity/host/Laison.Lapis.Identity.HttpApi.Host/Logs
 /Laison.Lapis.Demo/host/Laison.Lapis.Demo.HttpApi.Host/Logs
+/Laison.Lapis.Shared/host/Laison.Lapis.Host/Logs
