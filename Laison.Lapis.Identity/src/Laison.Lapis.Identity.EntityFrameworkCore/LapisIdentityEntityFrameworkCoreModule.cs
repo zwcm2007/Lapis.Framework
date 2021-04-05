@@ -7,8 +7,8 @@ using Volo.Abp.Modularity;
 namespace Laison.Lapis.Identity.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(LapisIdentityDomainModule),
-        typeof(AbpEntityFrameworkCoreModule)
+        typeof(AbpEntityFrameworkCoreModule),
+        typeof(LapisIdentityDomainModule)
     )]
     public class LapisIdentityEntityFrameworkCoreModule : AbpModule
     {

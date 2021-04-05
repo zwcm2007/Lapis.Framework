@@ -8,10 +8,10 @@ using Laison.Lapis.Identity.Application.Contracts;
 namespace Laison.Lapis.Identity.Application
 {
     [DependsOn(
-        typeof(LapisIdentityDomainModule),
-        typeof(LapisIdentityApplicationContractsModule),
         typeof(AbpDddApplicationModule),
-        typeof(AbpAutoMapperModule)
+        typeof(AbpAutoMapperModule),
+        typeof(LapisIdentityApplicationContractsModule),
+        typeof(LapisIdentityDomainModule)
         )]
     public class LapisIdentityApplicationModule : AbpModule
     {

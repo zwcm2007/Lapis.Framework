@@ -34,7 +34,7 @@ namespace Laison.Lapis.Identity.Application
 
         public async Task<UserDto> FindByUsernameAsync(string userName)
         {
-            var a =  L["ManageYourProfile"];
+            //var a =  L["SamplePageMessage"];
             var user = await _userRepository.FindByUserNameAsync(userName);
             return ObjectMapper.Map<User, UserDto>(user);
         }
