@@ -16,13 +16,13 @@ namespace Laison.Lapis.Identity.Domain.Shared
         {
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<LapisIdentityDomainSharedModule>("Laison.Lapis.Identity.Domain");
+                options.FileSets.AddEmbedded<LapisIdentityDomainSharedModule>();
             });
 
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Resources
-                    .Add<IdentityResource>("en")
+                    .Add<IdentityResource>("zh-Hans")
                     .AddBaseTypes(typeof(AbpValidationResource))
                     .AddVirtualJson("/Localization/Identity");
             });
