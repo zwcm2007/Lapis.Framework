@@ -28,9 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="EntityFrameworkCore\**" />
     <Compile Remove="Logs\**" />
+    <Content Remove="EntityFrameworkCore\**" />
     <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="EntityFrameworkCore\**" />
     <EmbeddedResource Remove="Logs\**" />
+    <None Remove="EntityFrameworkCore\**" />
     <None Remove="Logs\**" />
   </ItemGroup>
 

@@ -35,8 +35,8 @@ namespace Laison.Lapis.Account.Application
 
             return new UserLoginOutput
             {
-                AccessToken = JwtHelper.GenerateToken(user, Configuration),
-                Profile = ObjectMapper.Map<User, ProfileDto>(user)
+               // AccessToken = JwtHelper.GenerateToken(user, Configuration),
+               // Profile = ObjectMapper.Map<User, ProfileDto>(user)
             };
         }
 
