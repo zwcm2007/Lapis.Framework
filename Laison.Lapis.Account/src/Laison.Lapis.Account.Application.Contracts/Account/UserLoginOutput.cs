@@ -8,8 +8,8 @@
         public string AccessToken { get; set; }
 
         /// <summary>
-        /// 用户简介
+        /// 用户信息
         /// </summary>
-        public ProfileDto Profile { get; set; }
+        public UserDto UserInfo { get; set; }
     }
 }

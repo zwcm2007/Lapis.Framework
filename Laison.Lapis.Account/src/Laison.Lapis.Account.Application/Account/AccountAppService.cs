@@ -25,7 +25,7 @@ namespace Laison.Lapis.Account.Application
             var user = await _userRepository.FindByUserNameAsync(input.UserName);
             if (user == null)
             {
-                throw new UserFriendlyException("登录用户不存在", AccountErrorCodes.UserNotExist);
+                throw new UserFriendlyException("当前用户不存在", AccountErrorCodes.CurrentUserNotExist);
             }
 
             if (!user.CheckPassword(input.Password.ToMd5()))
@@ -35,8 +35,8 @@ namespace Laison.Lapis.Account.Application
 
             return new UserLoginOutput
             {
-               // AccessToken = JwtHelper.GenerateToken(user, Configuration),
-               // Profile = ObjectMapper.Map<User, ProfileDto>(user)
+                AccessToken = JwtHelper.GenerateToken(user, Configuration),
+                UserInfo = ObjectMapper.Map<User, UserDto>(user)
             };
         }
 
