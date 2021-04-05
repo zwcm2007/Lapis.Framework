@@ -17,8 +17,8 @@ namespace Laison.Lapis.Account.Domain
         /// <returns></returns>
         public static bool CheckPassword(this User user, string currentPassword)
         {
-            var city = user.GetCity();
-            user.SetCity("ShangHai");
+            //var city = user.GetCity();
+            //user.SetCity("ShangHai");
 
             return user.Password == currentPassword;
         }
