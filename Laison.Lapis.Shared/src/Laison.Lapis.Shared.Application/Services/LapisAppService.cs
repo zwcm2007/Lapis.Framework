@@ -1,5 +1,4 @@
-﻿using Laison.Lapis.Shared;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Volo.Abp.Application.Services;
 
 namespace Laison.Lapis.Shared.Application
@@ -9,11 +8,7 @@ namespace Laison.Lapis.Shared.Application
     /// </summary>
     public abstract class LapisAppService : ApplicationService
     {
-        protected new ICurrentUser CurrentUser => LazyGetRequiredService(ref _currentUser);
-        private ICurrentUser _currentUser;
-
-        protected IConfiguration Configuration => LazyGetRequiredService(ref _configuration);
-        private IConfiguration _configuration;
+        protected IConfiguration Configuration => LazyServiceProvider.LazyGetRequiredService<IConfiguration>();
 
         protected LapisAppService()
         {

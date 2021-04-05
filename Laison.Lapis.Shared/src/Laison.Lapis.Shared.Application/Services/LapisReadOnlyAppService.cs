@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Entities;
@@ -26,17 +27,16 @@ namespace Laison.Lapis.Shared.Application
         where TEntity : class, IEntity<TKey>
         where TEntityDto : IEntityDto<TKey>
     {
-        protected new ICurrentUser CurrentUser => LazyGetRequiredService(ref _currentUser);
-        private ICurrentUser _currentUser;
+  
 
         protected LapisReadOnlyAppService(IRepository<TEntity, TKey> repository)
             : base(repository)
         {
         }
 
-        protected override IQueryable<TEntity> CreateFilteredQuery(TGetListInput input)
+        protected override Task<IQueryable<TEntity>> CreateFilteredQueryAsync(TGetListInput input)
         {
-            return base.CreateFilteredQuery(input);
+            return base.CreateFilteredQueryAsync(input);
         }
     }
 }
