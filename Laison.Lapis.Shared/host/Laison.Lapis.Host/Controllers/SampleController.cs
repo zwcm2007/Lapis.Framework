@@ -1,5 +1,6 @@
 using IdentityModel;
 using Laison.Lapis.Shared.HttpApi;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -31,32 +32,53 @@ namespace Laison.Lapis.Host
             var a = Configuration["Jwt:IssuerSigningKey"].ToString();
         }
 
-        [HttpGet("ThrowException")]
-        public void Get2Async()
-        {
-            throw new UserFriendlyException("我是友好异常", "1002");
-            //throw new BusinessException("1001", "我是业务异常");
-        }
-
-        //[Authorize]
+        /// <summary>
+        /// 返回有结果的数据
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("HasResult")]
-        public ReturnResult Get3Async()
+        public dynamic Get2Async()
         {
-            return new ReturnResult
+            return new
             {
                 Name = "冯珏庆",
-                Address = "朝晖九区"
+                Sex = "男",
+                Favorite = "旅游"
             };
-            // var userId = _principalAccessor.Principal.FindFirst(c => c.Type == AbpClaimTypes.UserId)?.Value;
-            //return userId;
         }
 
-        [Route("token")]
+        /// <summary>
+        /// 抛出异常
+        /// </summary>
+        [HttpGet("ThrowException")]
+        public void Get3Async()
+        {
+            throw new UserFriendlyException("我是友好异常", "1002");
+        }
+
+        /// <summary>
+        /// 需要授权操作
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost("AuthorizedOperation")]
+        public string Get4Async()
+        {
+            //var userId = _principalAccessor.Principal.FindFirst(c => c.Type == AbpClaimTypes.UserId)?.Value;
+            var userId = CurrentUser.Id;
+            return userId?.ToString() ?? "";
+        }
+
+        /// <summary>
+        /// 获取JWT令牌
+        /// </summary>
+        /// <returns></returns>
+        [Route("JwtToken")]
         [HttpGet]
         public string GetToken()
         {
             var token = GenerateJwt("JwtBearerSample_11231~#$%#%^2235",
-                    new Claim(AbpClaimTypes.UserId, "1"),
+                    new Claim(AbpClaimTypes.UserId, "1"),  //id
                     new Claim(AbpClaimTypes.UserName, "fjq"),
                     new Claim(AbpClaimTypes.PhoneNumber, "18668180673"),
                     new Claim(AbpClaimTypes.Email, "180489097@qq.com"),
@@ -66,35 +88,22 @@ namespace Laison.Lapis.Host
                     );
 
             return token;
-        }
 
-        private string GenerateJwt(string key, params Claim[] claims)
-        {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var expiresAt = DateTime.UtcNow.AddHours(12);   //authTime.AddSeconds(30);
-            var tokenDescriptor = new SecurityTokenDescriptor
+            static string GenerateJwt(string key, params Claim[] claims)
             {
-                Subject = new ClaimsIdentity(claims),
-                Expires = expiresAt,
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)), SecurityAlgorithms.HmacSha256Signature)
-            };
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var expiresAt = DateTime.UtcNow.AddHours(12);   //authTime.AddSeconds(30);
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(claims),
+                    Expires = expiresAt,
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)), SecurityAlgorithms.HmacSha256Signature)
+                };
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            var tokenString = tokenHandler.WriteToken(token);
-            return tokenString;
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                var tokenString = tokenHandler.WriteToken(token);
+                return tokenString;
+            }
         }
-    }
-
-    public class ReturnResult
-    {
-        /// <summary>
-        /// 姓名
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 地址
-        /// </summary>
-        public string Address { get; set; }
     }
 }

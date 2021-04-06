@@ -26,15 +26,28 @@
             返回无结果的数据
             </summary>
         </member>
-        <member name="P:Laison.Lapis.Host.ReturnResult.Name">
+        <member name="M:Laison.Lapis.Host.SampleController.Get2Async">
             <summary>
-            姓名
+            返回有结果的数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Laison.Lapis.Host.SampleController.Get3Async">
+            <summary>
+            抛出异常
             </summary>
         </member>
-        <member name="P:Laison.Lapis.Host.ReturnResult.Address">
+        <member name="M:Laison.Lapis.Host.SampleController.Get4Async">
             <summary>
-            地址
+            需要授权操作
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Laison.Lapis.Host.SampleController.GetToken">
+            <summary>
+            获取JWT令牌
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:Laison.Lapis.Host.LapisHostModule.ConfigureServices(Volo.Abp.Modularity.ServiceConfigurationContext)">
              <summary>
