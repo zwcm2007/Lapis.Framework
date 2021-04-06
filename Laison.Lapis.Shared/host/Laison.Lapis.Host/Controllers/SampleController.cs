@@ -79,11 +79,12 @@ namespace Laison.Lapis.Host
         {
             var token = GenerateJwt("JwtBearerSample_11231~#$%#%^2235",
                     new Claim(AbpClaimTypes.UserId, "1"),  //id
-                    new Claim(AbpClaimTypes.UserName, "fjq"),
+                    new Claim(AbpClaimTypes.TenantId, "2"),
+                    new Claim(AbpClaimTypes.UserName, "admin"),
+                    new Claim(AbpClaimTypes.Name, "·ëçåÇì"),
                     new Claim(AbpClaimTypes.PhoneNumber, "18668180673"),
                     new Claim(AbpClaimTypes.Email, "180489097@qq.com"),
-                    //new Claim("orgid", user.ORGID),
-                    new Claim(JwtClaimTypes.Issuer, "DangKe"),
+                    new Claim(JwtClaimTypes.Issuer, "Laison"),
                     new Claim(JwtClaimTypes.Audience, "Audience")
                     );
 

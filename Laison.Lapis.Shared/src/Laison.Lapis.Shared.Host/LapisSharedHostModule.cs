@@ -32,9 +32,11 @@ namespace Laison.Lapis.Shared.Host
         {
             // compatible with identity server claims.
             AbpClaimTypes.UserId = JwtClaimTypes.Id;
-            AbpClaimTypes.UserName = JwtClaimTypes.Name;
-            AbpClaimTypes.Role = JwtClaimTypes.Role;
+            AbpClaimTypes.UserName = "username";
+            AbpClaimTypes.Name = JwtClaimTypes.Name;
+            AbpClaimTypes.PhoneNumber = JwtClaimTypes.PhoneNumber;
             AbpClaimTypes.Email = JwtClaimTypes.Email;
+            AbpClaimTypes.Role = JwtClaimTypes.Role;
         }
 
         public override void ConfigureServices(ServiceConfigurationContext context)
