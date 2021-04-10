@@ -13,7 +13,7 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
     /// <summary>
     /// Order Repository
     /// </summary>
-    public class OrderRepository : EfCoreRepository<IPrepaymentDbContext, Trade, Guid>, IOrderRepository
+    public class OrderRepository : EfCoreRepository<IPrepaymentDbContext, Trade, Guid>, ICustomerRepository
     {
         /// <summary>
         /// Ctor

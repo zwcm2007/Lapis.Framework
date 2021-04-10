@@ -17,16 +17,9 @@ namespace Laison.Lapis.Prepayment.HttpApi
             _orderAppService = orderAppService;
         }
 
-        [HttpGet]
-        public Task<OrderDto> GetOrderDetailsAsync([FromQuery] Guid id)
+        public Task<AccountDto> CreateAccountAsync(CreateAccountInput input)
         {
-            return _orderAppService.GetOrderDetailsAsync(id);
-        }
-
-        [HttpPost]
-        public Task CreateOrderAsync(CreateOrderInput input)
-        {
-            return _orderAppService.CreateOrderAsync(input);
+            throw new NotImplementedException();
         }
     }
 }

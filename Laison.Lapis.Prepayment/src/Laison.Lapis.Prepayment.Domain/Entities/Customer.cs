@@ -1,6 +1,5 @@
 ﻿using Laison.Lapis.Prepayment.Domain.ValueObjects;
 using System;
-using Volo.Abp.Auditing;
 using Volo.Abp.Domain.Entities;
 
 namespace Laison.Lapis.Prepayment.Domain.Entities
@@ -8,14 +7,8 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
     /// <summary>
     /// 客户
     /// </summary>
-    public class Customer : AggregateRoot<Guid>, IHasCreationTime
+    public class Customer : AggregateRoot<Guid>
     {
-        /// <summary>
-        /// 户号
-        /// </summary>
-        /// </summary>
-        public string No { get; protected set; }
-
         /// <summary>
         /// 姓名
         /// </summary>
@@ -35,35 +28,49 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         public string Telphone { get; protected set; }
 
         /// <summary>
+        /// 电子邮件
+        /// </summary>
+        /// </summary>
+        public string Email { get; protected set; }
+
+        /// <summary>
         /// 地址
         /// </summary>
         /// </summary>
         public Address Address { get; protected set; }
 
+        /// <summary>
+        /// 备注
+        /// </summary>
+        /// </summary>
+        public string Remark { get; protected set; }
 
+        /// <summary>
+        /// 账户ID
+        /// </summary>
+        public Guid AccountId { get; protected set; }
 
-
-        public DateTime CreationTime => throw new NotImplementedException();
+        /// <summary>
+        /// 账户
+        /// </summary>
+        public Account Account { get; protected set; }
 
         protected Customer()
         {
         }
 
-        public Customer(Guid orderId, Guid productId, int count)
+        public Customer(Guid id, Guid accountId, string name, string email, string identityNo)
         {
+            Id = id;
+            AccountId = accountId;
+            Name = name;
+            Email = email;
+            IdentityNo = identityNo;
         }
 
-        /// <summary>
-        /// change product count
-        /// </summary>
-        internal void ChangeCount(int count)
+        public void Change(string name, string email, string identityNo)
         {
-            Count = count;
-        }
-
-        public override object[] GetKeys()
-        {
-            return new object[] { OrderId, ProductId };
+            Name = name;
         }
     }
 }

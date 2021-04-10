@@ -6,8 +6,6 @@ namespace Laison.Lapis.Prepayment.Application.Contracts
 {
     public interface IAccountAppService : IApplicationService
     {
-        Task<OrderDto> GetOrderDetailsAsync(Guid id);
-
-        Task CreateOrderAsync(CreateOrderInput input);
+        Task<AccountDto> CreateAccountAsync(CreateAccountInput input);
     }
 }

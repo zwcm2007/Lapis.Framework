@@ -8,8 +8,14 @@ namespace Laison.Lapis.Prepayment.Domain.ValueObjects
     /// </summary>
     public class MoneyAmount : ValueObject
     {
+        /// <summary>
+        /// 数量
+        /// </summary>
         public double Amount { get; private set; }
 
+        /// <summary>
+        /// 币种
+        /// </summary>
         public Currency Currency { get; private set; }
 
         private MoneyAmount()

@@ -7,13 +7,12 @@ using Volo.Abp.Domain.Repositories;
 namespace Laison.Lapis.Prepayment.Domain.IRepositories
 {
     /// <summary>
-    /// An interface for order repository
+    /// An interface for customer repository
     /// </summary>
-    public interface IOrderRepository : IBasicRepository<TradeRecordBase, Guid>
+    public interface ICustomerRepository : IBasicRepository<Customer, Guid>
     {
+        Task OpenAccountAsync();
 
-        Task<TradeRecordBase> GetOrderAsync(Guid id);
-
-        Task<List<TradeRecordBase>> GetOrdersAsync(Guid customerId);
+        //Task<List<TradeRecordBase>> GetOrdersAsync(Guid customerId);
     }
 }

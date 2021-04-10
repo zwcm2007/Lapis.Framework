@@ -6,9 +6,9 @@ using Volo.Abp.Domain.Entities;
 namespace Laison.Lapis.Prepayment.Domain.Entities
 {
     /// <summary>
-    /// 交易记录
+    /// 交易明细
     /// </summary>
-    public abstract class TradeRecordBase : AggregateRoot<Guid>, IHasCreationTime
+    public abstract class TradeDetailBase : AggregateRoot<Guid>, IHasCreationTime
     {
         /// <summary>
         /// 客户ID
@@ -31,11 +31,11 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         public DateTime CreationTime { get; protected set; }
 
 
-        protected TradeRecordBase()
+        protected TradeDetailBase()
         {
         }
 
-        protected TradeRecordBase(Guid id, Guid customerId, Guid operatorId, string invoiceNo)
+        protected TradeDetailBase(Guid id, Guid customerId, Guid operatorId, string invoiceNo)
         {
             Id = id;
             CustomerId = customerId;

@@ -6,22 +6,23 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
     /// <summary>
     /// 开户交易记录
     /// </summary>
-    public class RegistrationTradeRecord : TradeRecordBase
+    public class RegistrationTradeDetail : TradeDetailBase
     {
         /// <summary>
         /// 开户费
         /// </summary>
         public MoneyAmount OpenAccountCharge { get; protected set; }
 
-        protected RegistrationTradeRecord()
+        protected RegistrationTradeDetail()
         {
         }
 
-        public RegistrationTradeRecord(Guid id, Guid customerId, Guid operatorId)
+        public RegistrationTradeDetail(Guid id, Guid customerId, Guid operatorId, MoneyAmount charge)
         {
             Id = id;
             OperatorId = operatorId;
             CustomerId = customerId;
+            OpenAccountCharge = charge;
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿namespace Laison.Lapis.Prepayment.Application.Contracts
 {
-    public class OrderDto
+    public class CreateCustomerInput
     {
-        public int Value { get; set; }
     }
 }

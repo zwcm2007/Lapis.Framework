@@ -16,6 +16,8 @@ namespace Laison.Lapis.Prepayment.Domain.ValueObjects
 
         public string Village { get; private set; }
 
+
+
         private Address()
         {
         }
