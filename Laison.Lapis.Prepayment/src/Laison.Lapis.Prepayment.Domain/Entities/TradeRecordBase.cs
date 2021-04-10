@@ -11,7 +11,7 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
     public abstract class TradeRecordBase : AggregateRoot<Guid>, IHasCreationTime
     {
         /// <summary>
-        /// customer id
+        /// 客户ID
         /// </summary>
         public Guid CustomerId { get; protected set; }
 
@@ -39,6 +39,7 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         {
             Id = id;
             CustomerId = customerId;
+            OperatorId = operatorId;
             InvoiceNo = invoiceNo;
         }
     }

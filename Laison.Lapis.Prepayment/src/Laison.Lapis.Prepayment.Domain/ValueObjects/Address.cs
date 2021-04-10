@@ -1,12 +1,39 @@
-﻿namespace Laison.Lapis.Prepayment.Domain.ValueObjects
+﻿using System.Collections.Generic;
+using Volo.Abp.Domain.Values;
+
+namespace Laison.Lapis.Prepayment.Domain.ValueObjects
 {
     /// <summary>
-    /// Value Object
+    /// 地址
     /// </summary>
-    public enum TradeType
+    public class Address : ValueObject
     {
-        Register,
+        public string Province { get; private set; }
 
-        Purchase,
+        public string City { get; private set; }
+
+        public string Town { get; private set; }
+
+        public string Village { get; private set; }
+
+        private Address()
+        {
+        }
+
+        public Address(string province, string city, string town, string village)
+        {
+            Province = province;
+            City = city;
+            Town = town;
+            Village = village;
+        }
+
+        protected override IEnumerable<object> GetAtomicValues()
+        {
+            yield return Province;
+            yield return City;
+            yield return Town;
+            yield return Village;
+        }
     }
 }

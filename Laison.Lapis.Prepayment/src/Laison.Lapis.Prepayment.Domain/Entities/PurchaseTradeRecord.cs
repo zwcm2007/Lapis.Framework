@@ -11,12 +11,9 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         {
         }
 
-        public PurchaseTradeRecord(Guid id, Guid customerId, Guid operatorId)
-            : base()
+        public PurchaseTradeRecord(Guid id, Guid customerId, Guid operatorId, string invoiceNo)
+            : base(id, customerId, operatorId, invoiceNo)
         {
-            Id = id;
-            OperatorId = operatorId;
-            CustomerId = customerId;
         }
     }
 }
