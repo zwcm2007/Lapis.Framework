@@ -16,16 +16,25 @@ namespace Laison.Lapis.Prepayment.Application
         private readonly ICustomerRepository _customerRepository;
         private readonly IAccountRepository _accountRepository;
         private readonly IRepository<RechargeTradeDetail, Guid> _rechargeTradeDetailRepository;
-        private readonly IRepository<RechargeTradeDetail, Guid> _purchageTradeDetailRepository;
+        private readonly IRepository<RegisterTradeDetail, Guid> _registerTradeDetailRepository;
 
-        public AccountAppService(ICustomerRepository customerRepository)
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="customerRepository"></param>
+        /// <param name="accountRepository"></param>
+        /// <param name="rechargeTradeDetailRepository"></param>
+        /// <param name="registerTradeDetailRepository"></param>
+        public AccountAppService(
+            ICustomerRepository customerRepository,
+            IAccountRepository accountRepository,
+            IRepository<RechargeTradeDetail, Guid> rechargeTradeDetailRepository,
+            IRepository<RegisterTradeDetail, Guid> registerTradeDetailRepository)
         {
             _customerRepository = customerRepository;
-        }
-
-        public Task CancelAccountAsync(CancelAccountInput input)
-        {
-            throw new NotImplementedException();
+            _accountRepository = accountRepository;
+            _rechargeTradeDetailRepository = rechargeTradeDetailRepository;
+            _registerTradeDetailRepository = registerTradeDetailRepository;
         }
 
         /// <summary>
@@ -46,14 +55,24 @@ namespace Laison.Lapis.Prepayment.Application
 
             await _customerRepository.InsertAsync(customer);
 
-            var tradeDetail = new RegistrationTradeDetail(GuidGenerator.Create(),
+            var tradeDetail = new RegisterTradeDetail(GuidGenerator.Create(),
                 customer.Id,
                 CurrentUser.Id.Value,
                 new MoneyAmount(200, Currency.Dollar));
 
-            _purchageTradeDetailRepository.InsertAsync(tradeDetail);
+            await _registerTradeDetailRepository.InsertAsync(tradeDetail);
 
             return null; ;
+        }
+
+        /// <summary>
+        /// 销户
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public Task CancelAccountAsync(CancelAccountInput input)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

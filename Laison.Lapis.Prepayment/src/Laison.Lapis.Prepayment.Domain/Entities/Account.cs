@@ -37,7 +37,7 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         {
         }
 
-        public Account(Guid id, string no, MoneyAmount debt, bool makeCard = false)
+        public Account(Guid id, string no, MoneyAmount debt, bool makeCard)
         {
             Id = id;
             No = no;
