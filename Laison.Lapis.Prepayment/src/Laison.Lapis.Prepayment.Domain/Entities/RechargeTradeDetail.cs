@@ -3,15 +3,15 @@
 namespace Laison.Lapis.Prepayment.Domain.Entities
 {
     /// <summary>
-    /// 购水交易记录
+    /// 充值交易记录
     /// </summary>
-    public class PurchaseTradeDetail : TradeDetailBase
+    public class RechargeTradeDetail : TradeDetailBase
     {
-        protected PurchaseTradeDetail()
+        protected RechargeTradeDetail()
         {
         }
 
-        public PurchaseTradeDetail(Guid id, Guid customerId, Guid operatorId, string invoiceNo)
+        public RechargeTradeDetail(Guid id, Guid customerId, Guid operatorId, string invoiceNo)
             : base(id, customerId, operatorId, invoiceNo)
         {
         }

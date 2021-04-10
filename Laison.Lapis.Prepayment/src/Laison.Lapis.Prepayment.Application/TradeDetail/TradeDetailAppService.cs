@@ -13,9 +13,9 @@ namespace Laison.Lapis.Prepayment.Application
     /// </summary>
     public class TradeDetailAppService : PrepaymentAppServiceBase, ITradeDetailAppService
     {
-        private readonly IRepository<PurchaseTradeDetail, Guid> _purchaseTradeDetailRepository;
+        private readonly IRepository<RechargeTradeDetail, Guid> _purchaseTradeDetailRepository;
 
-        public TradeDetailAppService(IRepository<PurchaseTradeDetail, Guid> purchaseTradeDetailRepository)
+        public TradeDetailAppService(IRepository<RechargeTradeDetail, Guid> purchaseTradeDetailRepository)
         {
             _purchaseTradeDetailRepository = purchaseTradeDetailRepository;
         }

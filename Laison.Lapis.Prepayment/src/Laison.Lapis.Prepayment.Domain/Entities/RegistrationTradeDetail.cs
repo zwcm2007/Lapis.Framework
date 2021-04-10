@@ -17,12 +17,19 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         {
         }
 
-        public RegistrationTradeDetail(Guid id, Guid customerId, Guid operatorId, MoneyAmount charge)
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="customerId"></param>
+        /// <param name="operatorId"></param>
+        /// <param name="openCharge">开户费</param>
+        public RegistrationTradeDetail(Guid id, Guid customerId, Guid operatorId, MoneyAmount openCharge)
         {
             Id = id;
             OperatorId = operatorId;
             CustomerId = customerId;
-            OpenAccountCharge = charge;
+            OpenAccountCharge = openCharge;
         }
     }
 }

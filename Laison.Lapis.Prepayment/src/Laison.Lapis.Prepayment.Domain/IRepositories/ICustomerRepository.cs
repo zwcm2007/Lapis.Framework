@@ -9,7 +9,7 @@ namespace Laison.Lapis.Prepayment.Domain.IRepositories
     /// <summary>
     /// An interface for customer repository
     /// </summary>
-    public interface IAccountRepository : IBasicRepository<Customer, Guid>
+    public interface IAccountRepository : IBasicRepository<Account, Guid>
     {
         //Task<T GetOrderAsync(Guid id);
         //Task<T GetOrderAsync(Guid id);
