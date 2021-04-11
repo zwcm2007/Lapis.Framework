@@ -4,9 +4,9 @@ namespace Laison.Lapis.Host
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
-            HostEx.Run<Startup>(args);
+            return HostEx.Run<Startup>(args);
         }
     }
 }
