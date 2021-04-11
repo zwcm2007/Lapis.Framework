@@ -25,7 +25,7 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         /// 电话
         /// </summary>
         /// </summary>
-        public string Telphone { get; protected set; }
+        public string Telephone { get; protected set; }
 
         /// <summary>
         /// 电子邮件
@@ -45,32 +45,27 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         /// </summary>
         public string Remark { get; protected set; }
 
-        /// <summary>
-        /// 账户ID
-        /// </summary>
-        public Guid AccountId { get; protected set; }
 
-        /// <summary>
-        /// 账户
-        /// </summary>
-        public Account Account { get; protected set; }
 
         protected Customer()
         {
         }
 
-        public Customer(Guid id, Guid accountId, string name, string email, string identityNo)
+        public Customer(Guid id, string name, string email, string identityNo, string telephone)
         {
             Id = id;
-            AccountId = accountId;
             Name = name;
             Email = email;
             IdentityNo = identityNo;
+            Telephone = telephone;
         }
 
-        public void Change(string name, string email, string identityNo)
+        public void Change(string name, string email, string identityNo, string telephone)
         {
             Name = name;
+            Email = email;
+            IdentityNo = identityNo;
+            Telephone = telephone;
         }
     }
 }

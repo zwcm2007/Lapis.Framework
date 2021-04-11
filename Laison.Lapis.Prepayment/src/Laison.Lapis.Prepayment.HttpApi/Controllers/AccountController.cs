@@ -17,16 +17,20 @@ namespace Laison.Lapis.Prepayment.HttpApi
             _accountAppService = accountAppService;
         }
 
+
+        [HttpPost]
+        public Task<AccountDto> CreateAccountAsync(CreateAccountInput input)
+        {
+            return _accountAppService.CreateAccountAsync(input);
+        }
+
+        [HttpDelete]
         public Task CancelAccountAsync(CancelAccountInput input)
         {
             throw new NotImplementedException();
         }
 
-        public Task<AccountDto> CreateAccountAsync(CreateAccountInput input)
-        {
-            throw new NotImplementedException();
-        }
-
+        [HttpPut]
         public Task RechargeAccountAsync(RechargeAccountInput input)
         {
             throw new NotImplementedException();

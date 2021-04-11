@@ -1,7 +1,6 @@
 ﻿using Laison.Lapis.Prepayment.Application.Contracts;
 using Laison.Lapis.Prepayment.Domain.Entities;
 using Laison.Lapis.Prepayment.Domain.IRepositories;
-using Laison.Lapis.Prepayment.Domain.ValueObjects;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Repositories;
@@ -44,28 +43,29 @@ namespace Laison.Lapis.Prepayment.Application
         /// <returns></returns>
         public async Task<AccountDto> CreateAccountAsync(CreateAccountInput input)
         {
-            var account = new Account(GuidGenerator.Create(), 
-                input.MeterNo, 
+            var account = new Account(GuidGenerator.Create(),
+                input.MeterNo,
                 input.Debt,
                 true);
 
             await _accountRepository.InsertAsync(account);
 
-            var customer = new Customer(GuidGenerator.Create(), account.Id,
+            var customer = new Customer(account.Id,
                 input.Customer.Name,
                 input.Customer.Email,
-                input.Customer.IdentityNo);
+                input.Customer.IdentityNo,
+                input.Customer.Telphone);
 
             await _customerRepository.InsertAsync(customer);
 
             var tradeDetail = new RegisterTradeDetail(GuidGenerator.Create(),
                 customer.Id,
                 CurrentUser.Id.Value,
-                new MoneyAmount(200, Currency.Dollar));
+                200);
 
             await _registerTradeDetailRepository.InsertAsync(tradeDetail);
 
-            return null; ;
+            return null;
         }
 
         /// <summary>

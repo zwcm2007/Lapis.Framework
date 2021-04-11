@@ -16,8 +16,6 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
             builder.ConfigureByConvention();
             // primary key
             builder.HasKey(c => c.Id);
-            // object relations
-            builder.HasOne(c => c.Account).WithOne().HasForeignKey<Customer>(c => c.AccountId).IsRequired();
             //
             builder.OwnsOne(o => o.Address);
         }

@@ -18,7 +18,7 @@ namespace Laison.Lapis.Prepayment.Application.Contracts
         /// 债务
         /// </summary>
         /// </summary>
-        public MoneyAmount Debt { get; protected set; }
+        public double Debt { get; protected set; }
 
         /// <summary>
         /// 表号

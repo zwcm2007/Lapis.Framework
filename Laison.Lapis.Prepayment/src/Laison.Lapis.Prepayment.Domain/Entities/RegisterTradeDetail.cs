@@ -11,7 +11,7 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         /// <summary>
         /// 开户费
         /// </summary>
-        public MoneyAmount OpenAccountCharge { get; protected set; }
+        public double OpenAccountCharge { get; protected set; }
 
         protected RegisterTradeDetail()
         {
@@ -24,7 +24,7 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         /// <param name="customerId"></param>
         /// <param name="operatorId"></param>
         /// <param name="openCharge">开户费</param>
-        public RegisterTradeDetail(Guid id, Guid customerId, Guid operatorId, MoneyAmount openCharge)
+        public RegisterTradeDetail(Guid id, Guid customerId, Guid operatorId, double openCharge)
         {
             Id = id;
             OperatorId = operatorId;

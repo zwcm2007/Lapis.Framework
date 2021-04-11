@@ -20,7 +20,7 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         /// 债务
         /// </summary>
         /// </summary>
-        public MoneyAmount Debt { get; protected set; }
+        public double Debt { get; protected set; }
 
         /// <summary>
         /// 制卡
@@ -33,16 +33,26 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         /// </summary>
         public DateTime CreationTime { get; protected set; }
 
+        /// <summary>
+        /// 客户
+        /// </summary>
+        public Customer Customer { get; protected set; }
+
+
+        #region 构造函数
+
         protected Account()
         {
         }
 
-        public Account(Guid id, string no, MoneyAmount debt, bool makeCard)
+        public Account(Guid id, string no, double debt, bool makeCard)
         {
             Id = id;
             No = no;
             Debt = debt;
             MakeCard = makeCard;
         }
+
+        #endregion 构造函数
     }
 }

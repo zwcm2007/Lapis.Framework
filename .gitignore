@@ -253,3 +253,4 @@ paket-files/
 /Laison.Lapis.Identity/host/Laison.Lapis.Identity.HttpApi.Host/Logs
 /Laison.Lapis.Demo/host/Laison.Lapis.Demo.HttpApi.Host/Logs
 /Laison.Lapis.Shared/host/Laison.Lapis.Host/Logs
+/Laison.Lapis.Prepayment/host/Laison.Lapis.Prepayment.HttpApi.Host/Logs
