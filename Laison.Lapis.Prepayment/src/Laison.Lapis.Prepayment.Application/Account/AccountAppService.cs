@@ -26,14 +26,15 @@ namespace Laison.Lapis.Prepayment.Application
         /// <param name="registerTradeDetailRepository"></param>
         public AccountAppService(
             ICustomerRepository customerRepository,
-            IAccountRepository accountRepository,
-            IRepository<RechargeTradeDetail, Guid> rechargeTradeDetailRepository,
-            IRepository<RegisterTradeDetail, Guid> registerTradeDetailRepository)
+            IAccountRepository accountRepository
+            //IRepository<RechargeTradeDetail, Guid> rechargeTradeDetailRepository,
+            //IRepository<RegisterTradeDetail, Guid> registerTradeDetailRepository
+            )
         {
             _customerRepository = customerRepository;
             _accountRepository = accountRepository;
-            _rechargeTradeDetailRepository = rechargeTradeDetailRepository;
-            _registerTradeDetailRepository = registerTradeDetailRepository;
+            //_rechargeTradeDetailRepository = rechargeTradeDetailRepository;
+            //_registerTradeDetailRepository = registerTradeDetailRepository;
         }
 
         /// <summary>
@@ -58,12 +59,12 @@ namespace Laison.Lapis.Prepayment.Application
 
             await _customerRepository.InsertAsync(customer);
 
-            var tradeDetail = new RegisterTradeDetail(GuidGenerator.Create(),
-                customer.Id,
-                CurrentUser.Id.Value,
-                200);
+            //var tradeDetail = new RegisterTradeDetail(GuidGenerator.Create(),
+            //    customer.Id,
+            //    CurrentUser.Id.Value,
+            //    200);
 
-            await _registerTradeDetailRepository.InsertAsync(tradeDetail);
+            //await _registerTradeDetailRepository.InsertAsync(tradeDetail);
 
             return null;
         }
@@ -84,6 +85,16 @@ namespace Laison.Lapis.Prepayment.Application
         /// <param name="input"></param>
         /// <returns></returns>
         public Task RechargeAccountAsync(RechargeAccountInput input)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public Task FrozenAccountAsync(FrozenAccountInput input)
         {
             throw new NotImplementedException();
         }

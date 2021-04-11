@@ -10,5 +10,9 @@ namespace Laison.Lapis.Prepayment.Application.Contracts
         Task RechargeAccountAsync(RechargeAccountInput input);
 
         Task CancelAccountAsync(CancelAccountInput input);
+
+        Task FrozenAccountAsync(FrozenAccountInput input);
+
+
     }
 }
