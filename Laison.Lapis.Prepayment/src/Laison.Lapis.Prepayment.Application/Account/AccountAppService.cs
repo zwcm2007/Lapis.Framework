@@ -66,14 +66,6 @@ namespace Laison.Lapis.Prepayment.Application
 
             await _accountRepository.InsertAsync(account);
 
-            //var customer = new Customer(account.Id,
-            //    input.Customer.Name,
-            //    input.Customer.Email,
-            //    input.Customer.IdentityNo,
-            //    input.Customer.Telephone);
-
-            //await _customerRepository.InsertAsync(customer);
-
             //var tradeDetail = new RegisterTradeDetail(GuidGenerator.Create(),
             //    customer.Id,
             //    CurrentUser.Id.Value,

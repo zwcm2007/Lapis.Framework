@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Laison.Lapis.Prepayment.Domain.ValueObjects;
+using System;
 using Volo.Abp.Auditing;
 using Volo.Abp.Domain.Entities;
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Volo.Abp.Domain.Values;
 
-namespace Laison.Lapis.Prepayment.Domain.Entities
+namespace Laison.Lapis.Prepayment.Domain.ValueObjects
 {
     /// <summary>
     /// 客户
