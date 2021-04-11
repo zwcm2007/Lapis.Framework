@@ -20,6 +20,9 @@ namespace Laison.Lapis.Prepayment.Application
             _purchaseTradeDetailRepository = purchaseTradeDetailRepository;
         }
 
-
+        public Task<RegisterTradeDto> GetRegisterTradeDetails()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
