@@ -4,12 +4,13 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 using System;
+using _Host = Microsoft.Extensions.Hosting.Host;
 
 namespace Laison.Lapis.Shared.Host
 {
     public class HostEx
     {
-        public static void Run<TStartup>(string[] args) where TStartup : class
+        public static int Run<TStartup>(string[] args) where TStartup : class
         {
             Log.Logger = new LoggerConfiguration()
 #if DEBUG
@@ -34,10 +35,12 @@ namespace Laison.Lapis.Shared.Host
             try
             {
                 CreateHostBuilder<TStartup>(args).Build().Run();
+                return 0;
             }
             catch (Exception ex)
             {
-                Log.Error(ex, "Host terminated unexpectedly!");
+                Log.Fatal(ex, "Host terminated unexpectedly!");
+                return 1;
             }
             finally
             {
@@ -45,10 +48,10 @@ namespace Laison.Lapis.Shared.Host
             }
         }
 
-        private static IHostBuilder CreateHostBuilder<TStartup>(string[] args) 
+        private static IHostBuilder CreateHostBuilder<TStartup>(string[] args)
             where TStartup : class
         {
-            return Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(args)
+            return _Host.CreateDefaultBuilder(args)
                  .ConfigureWebHostDefaults(webBuilder =>
                  {
                      webBuilder.UseStartup<TStartup>();
