@@ -9,18 +9,29 @@ namespace Laison.Lapis.Prepayment.HttpApi
     [Route("api/prepayment/trade-detail")]
     public class TradeDetailController : PrepaymentControllerBase, ITradeDetailAppService
     {
-        private readonly ICustomerAppService _accountAppService;
+        private readonly ITradeDetailAppService _tradeDetailAppService;
 
-        public TradeDetailController(ICustomerAppService accountAppService)
+        public TradeDetailController(ITradeDetailAppService tradeDetailAppService)
         {
-            _accountAppService = accountAppService;
+            _tradeDetailAppService = tradeDetailAppService;
         }
 
         /// <summary>
         /// 获取开户交易记录
         /// </summary>
         /// <returns></returns>
-        [HttpPut]
+        [HttpGet]
+        [Route("register")]
+        public Task<RegisterTradeDto> GetRegisterTradeDetails()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// 获取开户交易记录
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
         [Route("register")]
         public Task<RegisterTradeDto> GetRegisterTradeDetails()
         {

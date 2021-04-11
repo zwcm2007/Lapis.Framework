@@ -10,7 +10,12 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
     public class PrepaymentDbContext : AbpDbContext<PrepaymentDbContext>, IPrepaymentDbContext
     {
         public DbSet<Customer> Customers { get; set; }  // Todo: get or set ?
-        public DbSet<Account> Accounts { get; set; }  // Todo: get or set ?
+
+        public DbSet<Account> Accounts { get; set; }
+
+        public DbSet<RegisterTradeDetail> RegisterTradeDetails { get; set; }
+
+        public DbSet<RechargeTradeDetail> RechargeTradeDetails { get; set; }
 
         public PrepaymentDbContext(DbContextOptions<PrepaymentDbContext> options)
             : base(options)
