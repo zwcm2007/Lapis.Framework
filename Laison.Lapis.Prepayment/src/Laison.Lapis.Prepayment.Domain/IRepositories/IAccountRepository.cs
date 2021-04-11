@@ -9,7 +9,7 @@ namespace Laison.Lapis.Prepayment.Domain.IRepositories
     /// <summary>
     /// An interface for customer repository
     /// </summary>
-    public interface ICustomerRepository : IBasicRepository<Customer, Guid>
+    public interface IAccountRepository : IBasicRepository<Account, Guid>
     {
 
     }

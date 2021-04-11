@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="IRepositories\ICustomerRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.2.2" />
     <ProjectReference Include="..\Laison.Lapis.Prepayment.Domain.Shared\Laison.Lapis.Prepayment.Domain.Shared.csproj" />
   </ItemGroup>

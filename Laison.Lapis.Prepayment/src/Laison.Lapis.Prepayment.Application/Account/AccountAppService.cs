@@ -12,8 +12,9 @@ namespace Laison.Lapis.Prepayment.Application
     /// </summary>
     public class AccountAppService : PrepaymentAppServiceBase, IAccountAppService
     {
-        private readonly ICustomerRepository _customerRepository;
+        //private readonly ICustomerRepository _customerRepository;
         private readonly IAccountRepository _accountRepository;
+
         private readonly IRepository<RechargeTradeDetail, Guid> _rechargeTradeDetailRepository;
         private readonly IRepository<RegisterTradeDetail, Guid> _registerTradeDetailRepository;
 
@@ -25,13 +26,13 @@ namespace Laison.Lapis.Prepayment.Application
         /// <param name="rechargeTradeDetailRepository"></param>
         /// <param name="registerTradeDetailRepository"></param>
         public AccountAppService(
-            ICustomerRepository customerRepository,
+            //ICustomerRepository customerRepository,
             IAccountRepository accountRepository,
             IRepository<RechargeTradeDetail, Guid> rechargeTradeDetailRepository,
             IRepository<RegisterTradeDetail, Guid> registerTradeDetailRepository
             )
         {
-            _customerRepository = customerRepository;
+            //_customerRepository = customerRepository;
             _accountRepository = accountRepository;
             _rechargeTradeDetailRepository = rechargeTradeDetailRepository;
             _registerTradeDetailRepository = registerTradeDetailRepository;
@@ -47,30 +48,45 @@ namespace Laison.Lapis.Prepayment.Application
             var account = new Account(GuidGenerator.Create(),
                 input.MeterNo,
                 input.Debt,
-                true);
+                input.MakeCard,
+                input.Remark);
 
-            await _accountRepository.InsertAsync(account);
-
-            var customer = new Customer(account.Id,
+            account.Customer.SetCustomer(
                 input.Customer.Name,
                 input.Customer.Email,
                 input.Customer.IdentityNo,
                 input.Customer.Telephone);
 
-            await _customerRepository.InsertAsync(customer);
+            account.Customer.Address.SetAddress(
+                input.Customer.Address.Province,
+                input.Customer.Address.City,
+                input.Customer.Address.Town,
+                input.Customer.Address.Village
+                );
 
-            var tradeDetail = new RegisterTradeDetail(GuidGenerator.Create(),
-                customer.Id,
-                CurrentUser.Id.Value,
-                200);
+            await _accountRepository.InsertAsync(account);
 
-            await _registerTradeDetailRepository.InsertAsync(tradeDetail);
+            //var customer = new Customer(account.Id,
+            //    input.Customer.Name,
+            //    input.Customer.Email,
+            //    input.Customer.IdentityNo,
+            //    input.Customer.Telephone);
 
-            var accountDto = ObjectMapper.Map<Account, AccountDto>(account);
+            //await _customerRepository.InsertAsync(customer);
 
-            accountDto.Customer = ObjectMapper.Map<Customer, CustomerDto>(customer);
+            //var tradeDetail = new RegisterTradeDetail(GuidGenerator.Create(),
+            //    customer.Id,
+            //    CurrentUser.Id.Value,
+            //    200);
 
-            return accountDto;
+            //await _registerTradeDetailRepository.InsertAsync(tradeDetail);
+
+            //var accountDto = ObjectMapper.Map<Account, AccountDto>(account);
+
+            //accountDto.Customer = ObjectMapper.Map<Customer, CustomerDto>(customer);
+
+            //return accountDto;
+            return null;
         }
 
         /// <summary>

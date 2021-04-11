@@ -19,7 +19,7 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
                 options.AddDefaultRepositories(includeAllEntities: true);
 
                 // Add custom repositories
-                options.AddRepository<Customer, CustomerRepository>();
+                //options.AddRepository<Customer, CustomerRepository>();
                 options.AddRepository<Account, AccountRepository>();
             });
         }

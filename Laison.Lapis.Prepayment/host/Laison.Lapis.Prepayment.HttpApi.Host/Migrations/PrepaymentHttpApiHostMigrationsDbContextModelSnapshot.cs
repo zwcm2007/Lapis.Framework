@@ -22,6 +22,7 @@ namespace Laison.Lapis.Prepayment.Migrations
             modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.Account", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -47,45 +48,12 @@ namespace Laison.Lapis.Prepayment.Migrations
                     b.Property<string>("No")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Account");
-                });
-
-            modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.Customer", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(40)
-                        .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
-                        .HasColumnName("ExtraProperties");
-
-                    b.Property<string>("IdentityNo")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
                     b.Property<string>("Remark")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("Telephone")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Account");
                 });
 
             modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.RechargeTradeDetail", b =>
@@ -161,43 +129,63 @@ namespace Laison.Lapis.Prepayment.Migrations
 
             modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.Account", b =>
                 {
-                    b.HasOne("Laison.Lapis.Prepayment.Domain.Entities.Customer", "Customer")
-                        .WithOne()
-                        .HasForeignKey("Laison.Lapis.Prepayment.Domain.Entities.Account", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.Customer", b =>
-                {
-                    b.OwnsOne("Laison.Lapis.Prepayment.Domain.ValueObjects.Address", "Address", b1 =>
+                    b.OwnsOne("Laison.Lapis.Prepayment.Domain.Entities.Customer", "Customer", b1 =>
                         {
-                            b1.Property<Guid>("CustomerId")
+                            b1.Property<Guid>("AccountId")
                                 .HasColumnType("char(36)");
 
-                            b1.Property<string>("City")
+                            b1.Property<string>("Email")
                                 .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                            b1.Property<string>("Province")
+                            b1.Property<string>("IdentityNo")
                                 .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                            b1.Property<string>("Town")
+                            b1.Property<string>("Name")
                                 .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                            b1.Property<string>("Village")
+                            b1.Property<string>("Telephone")
                                 .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                            b1.HasKey("CustomerId");
+                            b1.HasKey("AccountId");
 
-                            b1.ToTable("Customer");
+                            b1.ToTable("customer");
 
                             b1.WithOwner()
-                                .HasForeignKey("CustomerId");
+                                .HasForeignKey("AccountId");
+
+                            b1.OwnsOne("Laison.Lapis.Prepayment.Domain.ValueObjects.Address", "Address", b2 =>
+                                {
+                                    b2.Property<Guid>("CustomerAccountId")
+                                        .HasColumnType("char(36)");
+
+                                    b2.Property<string>("City")
+                                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                                        .HasColumnName("AddressCity");
+
+                                    b2.Property<string>("Province")
+                                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                                        .HasColumnName("AddressProvince");
+
+                                    b2.Property<string>("Town")
+                                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                                        .HasColumnName("AddressTown");
+
+                                    b2.Property<string>("Village")
+                                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                                        .HasColumnName("AddressVillage");
+
+                                    b2.HasKey("CustomerAccountId");
+
+                                    b2.ToTable("customer");
+
+                                    b2.WithOwner()
+                                        .HasForeignKey("CustomerAccountId");
+                                });
+
+                            b1.Navigation("Address");
                         });
 
-                    b.Navigation("Address");
+                    b.Navigation("Customer");
                 });
 #pragma warning restore 612, 618
         }

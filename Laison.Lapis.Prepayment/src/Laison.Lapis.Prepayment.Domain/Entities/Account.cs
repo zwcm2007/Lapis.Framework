@@ -1,5 +1,4 @@
-﻿using Laison.Lapis.Prepayment.Domain.ValueObjects;
-using System;
+﻿using System;
 using Volo.Abp.Auditing;
 using Volo.Abp.Domain.Entities;
 
@@ -29,15 +28,20 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         public bool MakeCard { get; protected set; }
 
         /// <summary>
+        /// 备注
+        /// </summary>
+        /// </summary>
+        public string Remark { get; protected set; }
+
+        /// <summary>
         /// 开户时间
         /// </summary>
         public DateTime CreationTime { get; protected set; }
 
         /// <summary>
-        /// 客户
+        /// 客户信息
         /// </summary>
         public Customer Customer { get; protected set; }
-
 
         #region 构造函数
 
@@ -45,12 +49,14 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         {
         }
 
-        public Account(Guid id, string no, double debt, bool makeCard)
+        public Account(Guid id, string no, double debt, bool makeCard, string remark)
         {
             Id = id;
             No = no;
             Debt = debt;
             MakeCard = makeCard;
+            Remark = remark;
+            Customer = new Customer();
         }
 
         #endregion 构造函数

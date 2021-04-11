@@ -1,13 +1,13 @@
 ﻿using Laison.Lapis.Prepayment.Domain.ValueObjects;
-using System;
-using Volo.Abp.Domain.Entities;
+using System.Collections.Generic;
+using Volo.Abp.Domain.Values;
 
 namespace Laison.Lapis.Prepayment.Domain.Entities
 {
     /// <summary>
     /// 客户
     /// </summary>
-    public class Customer : AggregateRoot<Guid>
+    public class Customer : ValueObject
     {
         /// <summary>
         /// 姓名
@@ -39,33 +39,47 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         /// </summary>
         public Address Address { get; protected set; }
 
+        #region 构造函数
+
+        internal Customer()
+           : this(null, null, null, null)
+        {
+        }
+
+        public Customer(string name, string email, string identityNo, string telephone)
+        {
+            Name = name;
+            Email = email;
+            IdentityNo = identityNo;
+            Telephone = telephone;
+            Address = new Address();
+        }
+
+        #endregion 构造函数
+
         /// <summary>
-        /// 备注
+        /// 设置客户信息
         /// </summary>
-        /// </summary>
-        public string Remark { get; protected set; }
-
-
-
-        protected Customer()
+        /// <param name="name"></param>
+        /// <param name="identityNo"></param>
+        /// <param name="town"></param>
+        /// <param name="village"></param>
+        /// <param name="address"></param>
+        public void SetCustomer(string name, string identityNo, string telephone, string email)
         {
-        }
-
-        public Customer(Guid id, string name, string email, string identityNo, string telephone)
-        {
-            Id = id;
             Name = name;
             Email = email;
             IdentityNo = identityNo;
             Telephone = telephone;
         }
 
-        public void Change(string name, string email, string identityNo, string telephone)
+        protected override IEnumerable<object> GetAtomicValues()
         {
-            Name = name;
-            Email = email;
-            IdentityNo = identityNo;
-            Telephone = telephone;
+            yield return Name;
+            yield return IdentityNo;
+            yield return Telephone;
+            yield return Email;
+            yield return Address;
         }
     }
 }

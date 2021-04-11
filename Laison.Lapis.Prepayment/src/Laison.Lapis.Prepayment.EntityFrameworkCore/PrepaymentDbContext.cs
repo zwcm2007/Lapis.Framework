@@ -9,7 +9,7 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
     [ConnectionStringName(PrepaymentDbProperties.ConnectionStringName)]
     public class PrepaymentDbContext : AbpDbContext<PrepaymentDbContext>, IPrepaymentDbContext
     {
-        public DbSet<Customer> Customers { get; set; }  // Todo: get or set ?
+       // public DbSet<Customer> Customers { get; set; }  // Todo: get or set ?
 
         public DbSet<Account> Accounts { get; set; }
 

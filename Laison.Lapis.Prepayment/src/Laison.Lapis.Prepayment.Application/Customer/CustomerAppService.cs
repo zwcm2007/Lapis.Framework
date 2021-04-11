@@ -10,12 +10,12 @@ namespace Laison.Lapis.Prepayment.Application
     /// </summary>
     public class CustomerAppService : PrepaymentAppServiceBase, ICustomerAppService
     {
-        private readonly ICustomerRepository _customerRepository;
+        //private readonly ICustomerRepository _customerRepository;
 
-        public CustomerAppService(ICustomerRepository orderRepository)
-        {
-            _customerRepository = orderRepository;
-        }
+        //public CustomerAppService(ICustomerRepository orderRepository)
+        //{
+        //    _customerRepository = orderRepository;
+        //}
 
 
     }

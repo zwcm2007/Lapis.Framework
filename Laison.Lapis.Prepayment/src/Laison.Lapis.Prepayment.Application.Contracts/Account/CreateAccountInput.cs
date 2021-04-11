@@ -3,7 +3,7 @@
 namespace Laison.Lapis.Prepayment.Application.Contracts
 {
     /// <summary>
-    /// create order dto
+    /// 开户输入
     /// </summary>
     public class CreateAccountInput
     {
@@ -27,36 +27,64 @@ namespace Laison.Lapis.Prepayment.Application.Contracts
         public bool MakeCard { get; set; }
 
         /// <summary>
+        /// 备注
+        /// </summary>
+        public string Remark { get; set; }
+
+        /// <summary>
         /// 表号
         /// </summary>
         [Required]
         public CustomerDto Customer { get; set; }
     }
 
+    /// <summary>
+    /// 客户Dto
+    /// </summary>
     public class CustomerDto
     {
         /// <summary>
         /// 姓名
         /// </summary>
         /// </summary>
-        public string Name { get; protected set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// 身份证号
         /// </summary>
         /// </summary>
-        public string IdentityNo { get; protected set; }
+        public string IdentityNo { get; set; }
 
         /// <summary>
         /// 电话
         /// </summary>
         /// </summary>
-        public string Telephone { get; protected set; }
+        public string Telephone { get; set; }
 
         /// <summary>
         /// 电子邮件
         /// </summary>
         /// </summary>
-        public string Email { get; protected set; }
+        public string Email { get; set; }
+
+        /// <summary>
+        /// 电子邮件
+        /// </summary>
+        /// </summary>
+        public AddressDto Address { get; set; }
+    }
+
+    /// <summary>
+    /// 地址Dto
+    /// </summary>
+    public class AddressDto
+    {
+        public string Province { get; set; }
+
+        public string City { get; set; }
+
+        public string Town { get; set; }
+
+        public string Village { get; set; }
     }
 }

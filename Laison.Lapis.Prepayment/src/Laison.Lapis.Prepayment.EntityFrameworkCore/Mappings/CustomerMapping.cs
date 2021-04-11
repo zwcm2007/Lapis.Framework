@@ -16,8 +16,14 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
             builder.ConfigureByConvention();
             // primary key
             builder.HasKey(c => c.Id);
-            //
-            builder.OwnsOne(o => o.Address);
+            // owned entity
+            builder.OwnsOne(o => o.CustomerAddress, ca =>
+            {
+                ca.Property(p => p.Province).HasColumnName("AddressProvince");
+                ca.Property(p => p.City).HasColumnName("AddressCity");
+                ca.Property(p => p.Town).HasColumnName("AddressTown");
+                ca.Property(p => p.Village).HasColumnName("AddressVillage");
+            });
         }
     }
 }

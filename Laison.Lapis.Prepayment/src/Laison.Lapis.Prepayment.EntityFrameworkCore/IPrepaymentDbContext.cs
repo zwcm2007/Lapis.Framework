@@ -10,7 +10,7 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
     public interface IPrepaymentDbContext : IEfCoreDbContext
     {
         DbSet<Account> Accounts { get; }
-        DbSet<Customer> Customers { get; }
+        //DbSet<Customer> Customers { get; }
         DbSet<RegisterTradeDetail> RegisterTradeDetails { get; }
         DbSet<RechargeTradeDetail> RechargeTradeDetails { get; }
     }

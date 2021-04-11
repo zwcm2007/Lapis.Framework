@@ -16,13 +16,26 @@ namespace Laison.Lapis.Prepayment.Domain.ValueObjects
 
         public string Village { get; private set; }
 
-
-
-        private Address()
+        internal Address()
         {
         }
 
         public Address(string province, string city, string town, string village)
+        {
+            Province = province;
+            City = city;
+            Town = town;
+            Village = village;
+        }
+
+        /// <summary>
+        /// 设置地址
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="email"></param>
+        /// <param name="identityNo"></param>
+        /// <param name="telephone"></param>
+        public void SetAddress(string province, string city, string town, string village)
         {
             Province = province;
             City = city;
