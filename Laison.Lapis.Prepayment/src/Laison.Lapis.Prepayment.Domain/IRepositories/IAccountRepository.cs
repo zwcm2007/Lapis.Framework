@@ -11,8 +11,6 @@ namespace Laison.Lapis.Prepayment.Domain.IRepositories
     /// </summary>
     public interface ICustomerRepository : IBasicRepository<Customer, Guid>
     {
-        Task OpenAccountAsync();
 
-        //Task<List<TradeRecordBase>> GetOrdersAsync(Guid customerId);
     }
 }

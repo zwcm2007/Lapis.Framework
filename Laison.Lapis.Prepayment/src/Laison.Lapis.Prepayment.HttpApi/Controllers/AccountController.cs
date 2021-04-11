@@ -12,12 +12,22 @@ namespace Laison.Lapis.Prepayment.HttpApi
     {
         private readonly IAccountAppService _accountAppService;
 
-        public AccountController(IAccountAppService orderAppService)
+        public AccountController(IAccountAppService accountAppService)
         {
-            _orderAppService = orderAppService;
+            _accountAppService = accountAppService;
+        }
+
+        public Task CancelAccountAsync(CancelAccountInput input)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<AccountDto> CreateAccountAsync(CreateAccountInput input)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task RechargeAccountAsync(RechargeAccountInput input)
         {
             throw new NotImplementedException();
         }

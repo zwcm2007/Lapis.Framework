@@ -9,8 +9,8 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
     [ConnectionStringName(PrepaymentDbProperties.ConnectionStringName)]
     public class PrepaymentDbContext : AbpDbContext<PrepaymentDbContext>, IPrepaymentDbContext
     {
-        // Add DbSet for each Aggregate Root
-        public DbSet<Trade> Orders { get; set; }  // Todo: get or set ?
+        public DbSet<Customer> Customers { get; set; }  // Todo: get or set ?
+        public DbSet<Account> Accounts { get; set; }  // Todo: get or set ?
 
         public PrepaymentDbContext(DbContextOptions<PrepaymentDbContext> options)
             : base(options)

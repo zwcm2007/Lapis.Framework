@@ -5,7 +5,7 @@ namespace Laison.Lapis.Prepayment.Application.Contracts
 {
     public interface ICustomerAppService : IApplicationService
     {
-        Task<CustomerDto> CreateCustomerAsync(CreateCustomerInput input);
+        //Task<CustomerDto> CreateCustomerAsync(CreateCustomerInput input);
 
 
     }

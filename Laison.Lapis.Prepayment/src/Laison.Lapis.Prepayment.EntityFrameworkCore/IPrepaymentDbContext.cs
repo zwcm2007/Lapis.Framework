@@ -9,8 +9,7 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
     [ConnectionStringName(PrepaymentDbProperties.ConnectionStringName)]
     public interface IPrepaymentDbContext : IEfCoreDbContext
     {
-        // Add DbSet for each Aggregate Root
-        DbSet<Trade> Orders { get; }
+        DbSet<Account> Accounts { get; }
         
     }
 }

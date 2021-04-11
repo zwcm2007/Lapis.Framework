@@ -44,7 +44,10 @@ namespace Laison.Lapis.Prepayment.Application
         /// <returns></returns>
         public async Task<AccountDto> CreateAccountAsync(CreateAccountInput input)
         {
-            var account = new Account(GuidGenerator.Create(), input.MeterNo, input.Debt);
+            var account = new Account(GuidGenerator.Create(), 
+                input.MeterNo, 
+                input.Debt,
+                true);
 
             await _accountRepository.InsertAsync(account);
 
