@@ -61,5 +61,11 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         }
 
         #endregion 构造函数
+
+
+        public void Cancel()
+        {
+
+        }
     }
 }

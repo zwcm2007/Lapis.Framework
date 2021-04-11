@@ -3,6 +3,7 @@ using Laison.Lapis.Prepayment.Domain.Entities;
 using Laison.Lapis.Prepayment.Domain.IRepositories;
 using System;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.Domain.Repositories;
 
 namespace Laison.Lapis.Prepayment.Application
@@ -12,27 +13,22 @@ namespace Laison.Lapis.Prepayment.Application
     /// </summary>
     public class AccountAppService : PrepaymentAppServiceBase, IAccountAppService
     {
-        //private readonly ICustomerRepository _customerRepository;
         private readonly IAccountRepository _accountRepository;
-
         private readonly IRepository<RechargeTradeDetail, Guid> _rechargeTradeDetailRepository;
         private readonly IRepository<RegisterTradeDetail, Guid> _registerTradeDetailRepository;
 
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="customerRepository"></param>
         /// <param name="accountRepository"></param>
         /// <param name="rechargeTradeDetailRepository"></param>
         /// <param name="registerTradeDetailRepository"></param>
         public AccountAppService(
-            //ICustomerRepository customerRepository,
             IAccountRepository accountRepository,
             IRepository<RechargeTradeDetail, Guid> rechargeTradeDetailRepository,
             IRepository<RegisterTradeDetail, Guid> registerTradeDetailRepository
             )
         {
-            //_customerRepository = customerRepository;
             _accountRepository = accountRepository;
             _rechargeTradeDetailRepository = rechargeTradeDetailRepository;
             _registerTradeDetailRepository = registerTradeDetailRepository;
@@ -66,19 +62,14 @@ namespace Laison.Lapis.Prepayment.Application
 
             await _accountRepository.InsertAsync(account);
 
-            //var tradeDetail = new RegisterTradeDetail(GuidGenerator.Create(),
-            //    customer.Id,
-            //    CurrentUser.Id.Value,
-            //    200);
+            var tradeDetail = new RegisterTradeDetail(GuidGenerator.Create(),
+                account.Id,
+                CurrentUser.Id.Value,
+                200);
 
-            //await _registerTradeDetailRepository.InsertAsync(tradeDetail);
+            await _registerTradeDetailRepository.InsertAsync(tradeDetail);
 
-            //var accountDto = ObjectMapper.Map<Account, AccountDto>(account);
-
-            //accountDto.Customer = ObjectMapper.Map<Customer, CustomerDto>(customer);
-
-            //return accountDto;
-            return null;
+            return ObjectMapper.Map<Account, AccountDto>(account);
         }
 
         /// <summary>
@@ -86,9 +77,14 @@ namespace Laison.Lapis.Prepayment.Application
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public Task CancelAccountAsync(CancelAccountInput input)
+        public async Task CancelAccountAsync(CancelAccountInput input)
         {
-            throw new NotImplementedException();
+            var account = await _accountRepository.FindAsync(input.Id);
+            if (account == null)
+            {
+                throw new UserFriendlyException($"账号不存在[{nameof(input.Id)}]！");
+            }
+            account.Cancel();
         }
 
         /// <summary>
@@ -102,7 +98,7 @@ namespace Laison.Lapis.Prepayment.Application
         }
 
         /// <summary>
-        ///
+        /// 冻结
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>

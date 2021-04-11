@@ -37,7 +37,7 @@ namespace Laison.Lapis.Prepayment.HttpApi
         [Route("cancel")]
         public Task CancelAccountAsync(CancelAccountInput input)
         {
-            throw new NotImplementedException();
+            return _accountAppService.CancelAccountAsync(input);
         }
 
         /// <summary>
