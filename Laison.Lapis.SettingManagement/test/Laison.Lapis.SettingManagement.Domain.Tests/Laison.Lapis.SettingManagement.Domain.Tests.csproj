@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Laison.Lapis.SettingManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+    <ProjectReference Include="..\Laison.Lapis.SettingManagement.EntityFrameworkCore.Tests\Laison.Lapis.SettingManagement.EntityFrameworkCore.Tests.csproj" />
+  </ItemGroup>
+
+</Project>
