@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Volo.Abp.Auditing;
 using Volo.Abp.Domain.Entities;
 
@@ -29,7 +28,6 @@ namespace Laison.Lapis.Prepayment.Domain.Entities
         /// create time
         /// </summary>
         public DateTime CreationTime { get; protected set; }
-
 
         protected TradeDetailBase()
         {

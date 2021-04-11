@@ -119,7 +119,7 @@ namespace Laison.Lapis.Prepayment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Recharge_Trade_Detail");
+                    b.ToTable("recharge_trade_detail");
                 });
 
             modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.RegisterTradeDetail", b =>
@@ -148,15 +148,15 @@ namespace Laison.Lapis.Prepayment.Migrations
                     b.Property<string>("InvoiceNo")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<double>("OpenAccountCharge")
-                        .HasColumnType("double");
-
                     b.Property<Guid>("OperatorId")
                         .HasColumnType("char(36)");
 
+                    b.Property<double>("RegisterCharge")
+                        .HasColumnType("double");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Register_Trade_Detail");
+                    b.ToTable("register_trade_detail");
                 });
 
             modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.Account", b =>

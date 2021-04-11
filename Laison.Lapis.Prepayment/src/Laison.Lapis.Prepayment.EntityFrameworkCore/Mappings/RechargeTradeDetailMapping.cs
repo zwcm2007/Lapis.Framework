@@ -12,7 +12,7 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
     {
         public void Configure(EntityTypeBuilder<RechargeTradeDetail> builder)
         {
-            builder.ToTable("Recharge_Trade_Detail");
+            builder.ToTable("recharge_trade_detail");
             builder.ConfigureByConvention();
             //
 

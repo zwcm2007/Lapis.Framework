@@ -1,5 +1,6 @@
 ﻿using Laison.Lapis.Prepayment.Application.Contracts;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Volo.Abp;
 
@@ -22,20 +23,20 @@ namespace Laison.Lapis.Prepayment.HttpApi
         /// <returns></returns>
         [HttpGet]
         [Route("register")]
-        public Task<RegisterTradeDto> GetRegisterTradeDetails()
+        public Task<List<RegisterTradeDto>> GetRegisterTradeDetails()
         {
             throw new System.NotImplementedException();
         }
 
         /// <summary>
-        /// 获取开户交易记录
+        /// 获取充值交易记录
         /// </summary>
         /// <returns></returns>
-        //[HttpGet]
-        //[Route("register")]
-        //public Task<RegisterTradeDto> GetRegisterTradeDetails()
-        //{
-        //    throw new System.NotImplementedException();
-        //}
+        [HttpGet]
+        [Route("recharge")]
+        public Task<List<RechargeTradeDto>> GetRechargeTradeDetails()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

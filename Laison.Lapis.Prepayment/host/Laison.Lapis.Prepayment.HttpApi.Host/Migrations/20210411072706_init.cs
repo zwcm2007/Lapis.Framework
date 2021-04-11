@@ -30,6 +30,41 @@ namespace Laison.Lapis.Prepayment.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Recharge_Trade_Detail",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false),
+                    ExtraProperties = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "varchar(40) CHARACTER SET utf8mb4", maxLength: 40, nullable: true),
+                    CustomerId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    OperatorId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    InvoiceNo = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Recharge_Trade_Detail", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Register_Trade_Detail",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false),
+                    OpenAccountCharge = table.Column<double>(type: "double", nullable: false),
+                    ExtraProperties = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "varchar(40) CHARACTER SET utf8mb4", maxLength: 40, nullable: true),
+                    CustomerId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    OperatorId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    InvoiceNo = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Register_Trade_Detail", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Account",
                 columns: table => new
                 {
@@ -57,6 +92,12 @@ namespace Laison.Lapis.Prepayment.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Account");
+
+            migrationBuilder.DropTable(
+                name: "Recharge_Trade_Detail");
+
+            migrationBuilder.DropTable(
+                name: "Register_Trade_Detail");
 
             migrationBuilder.DropTable(
                 name: "Customer");

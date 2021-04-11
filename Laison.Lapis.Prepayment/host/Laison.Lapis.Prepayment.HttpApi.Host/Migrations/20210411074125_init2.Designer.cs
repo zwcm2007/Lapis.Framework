@@ -10,8 +10,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Laison.Lapis.Prepayment.Migrations
 {
     [DbContext(typeof(PrepaymentHttpApiHostMigrationsDbContext))]
-    [Migration("20210411071344_third3")]
-    partial class third3
+    [Migration("20210411074125_init2")]
+    partial class init2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -121,7 +121,44 @@ namespace Laison.Lapis.Prepayment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegisterTradeDetail");
+                    b.ToTable("recharge_trade_detail");
+                });
+
+            modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.RegisterTradeDetail", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("InvoiceNo")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<Guid>("OperatorId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<double>("RegisterCharge")
+                        .HasColumnType("double");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("register_trade_detail");
                 });
 
             modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.Account", b =>
