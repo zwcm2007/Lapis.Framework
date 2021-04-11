@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Mappings\TradeDetailBaseMapping.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="4.2.2" />
     <ProjectReference Include="..\Laison.Lapis.Prepayment.Domain\Laison.Lapis.Prepayment.Domain.csproj" />
   </ItemGroup>

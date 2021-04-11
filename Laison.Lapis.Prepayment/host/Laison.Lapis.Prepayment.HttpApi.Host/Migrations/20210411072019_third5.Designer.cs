@@ -3,15 +3,17 @@ using System;
 using Laison.Lapis.Prepayment.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace Laison.Lapis.Prepayment.Migrations
 {
     [DbContext(typeof(PrepaymentHttpApiHostMigrationsDbContext))]
-    partial class PrepaymentHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210411072019_third5")]
+    partial class third5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

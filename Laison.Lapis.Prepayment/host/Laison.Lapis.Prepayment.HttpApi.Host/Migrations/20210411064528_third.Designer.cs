@@ -3,15 +3,17 @@ using System;
 using Laison.Lapis.Prepayment.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace Laison.Lapis.Prepayment.Migrations
 {
     [DbContext(typeof(PrepaymentHttpApiHostMigrationsDbContext))]
-    partial class PrepaymentHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210411064528_third")]
+    partial class third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,77 +88,6 @@ namespace Laison.Lapis.Prepayment.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customer");
-                });
-
-            modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.RechargeTradeDetail", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(40)
-                        .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime(6)")
-                        .HasColumnName("CreationTime");
-
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
-                        .HasColumnName("ExtraProperties");
-
-                    b.Property<string>("InvoiceNo")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<Guid>("OperatorId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Recharge_Trade_Detail");
-                });
-
-            modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.RegisterTradeDetail", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(40)
-                        .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime(6)")
-                        .HasColumnName("CreationTime");
-
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
-                        .HasColumnName("ExtraProperties");
-
-                    b.Property<string>("InvoiceNo")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<double>("OpenAccountCharge")
-                        .HasColumnType("double");
-
-                    b.Property<Guid>("OperatorId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Register_Trade_Detail");
                 });
 
             modelBuilder.Entity("Laison.Lapis.Prepayment.Domain.Entities.Account", b =>

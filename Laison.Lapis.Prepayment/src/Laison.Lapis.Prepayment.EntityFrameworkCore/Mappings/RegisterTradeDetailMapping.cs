@@ -8,11 +8,11 @@ namespace Laison.Lapis.Prepayment.EntityFrameworkCore
     /// <summary>
     /// 开户交易映射
     /// </summary>
-    public class RegisterTradeDetailMapping : IEntityTypeConfiguration<RechargeTradeDetail>
+    public class RegisterTradeDetailMapping : IEntityTypeConfiguration<RegisterTradeDetail>
     {
-        public void Configure(EntityTypeBuilder<RechargeTradeDetail> builder)
+        public void Configure(EntityTypeBuilder<RegisterTradeDetail> builder)
         {
-            builder.ToTable("RegisterTradeDetail");
+            builder.ToTable("Register_Trade_Detail");
             builder.ConfigureByConvention();
             //
 
