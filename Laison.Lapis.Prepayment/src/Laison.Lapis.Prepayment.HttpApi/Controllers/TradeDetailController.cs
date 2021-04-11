@@ -31,11 +31,11 @@ namespace Laison.Lapis.Prepayment.HttpApi
         /// 获取开户交易记录
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("register")]
-        public Task<RegisterTradeDto> GetRegisterTradeDetails()
-        {
-            throw new System.NotImplementedException();
-        }
+        //[HttpGet]
+        //[Route("register")]
+        //public Task<RegisterTradeDto> GetRegisterTradeDetails()
+        //{
+        //    throw new System.NotImplementedException();
+        //}
     }
 }
