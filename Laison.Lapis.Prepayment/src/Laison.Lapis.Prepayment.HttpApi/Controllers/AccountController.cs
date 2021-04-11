@@ -18,7 +18,7 @@ namespace Laison.Lapis.Prepayment.HttpApi
         }
 
         /// <summary>
-        // 开户
+        //  开户
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>

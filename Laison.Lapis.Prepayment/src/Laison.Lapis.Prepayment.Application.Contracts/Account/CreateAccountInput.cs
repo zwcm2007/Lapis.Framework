@@ -1,5 +1,4 @@
-﻿using Laison.Lapis.Prepayment.Domain.ValueObjects;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Laison.Lapis.Prepayment.Application.Contracts
 {
@@ -18,7 +17,14 @@ namespace Laison.Lapis.Prepayment.Application.Contracts
         /// 债务
         /// </summary>
         /// </summary>
-        public double Debt { get; protected set; }
+        [Required]
+        public double Debt { get; set; }
+
+        /// <summary>
+        /// 是否制卡
+        /// </summary>
+        [Required]
+        public bool MakeCard { get; set; }
 
         /// <summary>
         /// 表号
@@ -45,7 +51,7 @@ namespace Laison.Lapis.Prepayment.Application.Contracts
         /// 电话
         /// </summary>
         /// </summary>
-        public string Telphone { get; protected set; }
+        public string Telephone { get; protected set; }
 
         /// <summary>
         /// 电子邮件

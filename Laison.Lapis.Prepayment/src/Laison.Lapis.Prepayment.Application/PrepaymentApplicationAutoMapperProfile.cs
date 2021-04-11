@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Laison.Lapis.Prepayment.Application.Contracts;
+using Laison.Lapis.Prepayment.Domain.Entities;
 
 namespace Laison.Lapis.Prepayment.Application
 {
@@ -6,9 +8,8 @@ namespace Laison.Lapis.Prepayment.Application
     {
         public PrepaymentApplicationAutoMapperProfile()
         {
-            /* You can configure your AutoMapper mapping configuration here.
-             * Alternatively, you can split your mapping configurations
-             * into multiple profile classes for a better organization. */
+            CreateMap<Account, AccountDto>();
+            CreateMap<Customer, CustomerDto>();
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Laison.Lapis.Prepayment.Application
                 input.Customer.Name,
                 input.Customer.Email,
                 input.Customer.IdentityNo,
-                input.Customer.Telphone);
+                input.Customer.Telephone);
 
             await _customerRepository.InsertAsync(customer);
 
@@ -66,7 +66,11 @@ namespace Laison.Lapis.Prepayment.Application
 
             await _registerTradeDetailRepository.InsertAsync(tradeDetail);
 
-            return null;
+            var accountDto = ObjectMapper.Map<Account, AccountDto>(account);
+
+            accountDto.Customer = ObjectMapper.Map<Customer, CustomerDto>(customer);
+
+            return accountDto;
         }
 
         /// <summary>
