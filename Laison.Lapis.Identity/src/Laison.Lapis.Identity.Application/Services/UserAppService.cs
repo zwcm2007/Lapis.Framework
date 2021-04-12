@@ -4,6 +4,8 @@ using Laison.Lapis.Identity.Domain.IRepositories;
 using Laison.Lapis.Identity.Domain.Shared;
 using System;
 using System.Threading.Tasks;
+using Volo.Abp.Localization;
+using Volo.Abp.Settings;
 using Volo.Abp.Uow;
 
 namespace Laison.Lapis.Identity.Application
@@ -34,7 +36,13 @@ namespace Laison.Lapis.Identity.Application
 
         public async Task<UserDto> FindByUsernameAsync(string userName)
         {
-            //var a =  L["SamplePageMessage"];
+
+            var c = await base.SettingProvider.GetOrNullAsync(LocalizationSettingNames.DefaultLanguage);
+
+            var a  = ServiceProvider.GetService(typeof(ISettingDefinitionContext));
+
+            var b =  L["SamplePageMessage"];
+
             var user = await _userRepository.FindByUserNameAsync(userName);
             return ObjectMapper.Map<User, UserDto>(user);
         }

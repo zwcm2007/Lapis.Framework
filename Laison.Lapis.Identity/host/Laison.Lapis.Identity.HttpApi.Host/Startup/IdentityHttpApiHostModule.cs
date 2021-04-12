@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
+using Volo.Abp.Settings;
 
 namespace Laison.Lapis.Identity
 {
@@ -26,6 +27,12 @@ namespace Laison.Lapis.Identity
             {
                 options.UseMySQL();
             });
+
+            //Configure<AbpSettingOptions>(options =>
+            //{
+            //    options.DefinitionProviders.Clear();
+            //    options.DefinitionProviders.Add<DefaultLangSettingDefinitionProvider>(); 
+            //});
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)

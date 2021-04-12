@@ -10,7 +10,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Laison.Lapis.Identity.Migrations
 {
     [DbContext(typeof(IdentityHttpApiHostMigrationsDbContext))]
-    [Migration("20210402123638_init")]
+    [Migration("20210411113525_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

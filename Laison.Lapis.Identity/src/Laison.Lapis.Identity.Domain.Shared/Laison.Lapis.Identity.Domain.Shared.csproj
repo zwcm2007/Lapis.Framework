@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Localization\Identity\en.json" />
+    <None Remove="Localization\Identity\zh-Hans.json" />
   </ItemGroup>
 
   <ItemGroup>
