@@ -1,34 +1,34 @@
-using System;
+锘縰sing System;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.MultiTenancy;
 
 namespace Laison.Lapis.Identity.Domain.Entities
 {
     /// <summary>
-    /// 用户/角色关联
+    /// 缁勭粐/瑙掕壊鍏宠仈
     /// </summary>
-    public class UserRole : Entity, IMultiTenant
+    public class OrganizationRole : Entity, IMultiTenant
     {
         public virtual Guid? TenantId { get; protected set; }
 
-        public virtual Guid UserId { get; protected set; }
-
         public virtual Guid RoleId { get; protected set; }
 
-        protected UserRole()
+        public virtual Guid OrganizationId { get; protected set; }
+
+        protected OrganizationRole()
         {
         }
 
-        protected internal UserRole(Guid userId, Guid roleId, Guid? tenantId)
+        public OrganizationRole(Guid roleId, Guid orgId, Guid? tenantId = null)
         {
-            UserId = userId;
             RoleId = roleId;
+            OrganizationId = orgId;
             TenantId = tenantId;
         }
 
         public override object[] GetKeys()
         {
-            return new object[] { UserId, RoleId };
+            return new object[] { OrganizationId, RoleId };
         }
     }
 }
