@@ -1,13 +1,14 @@
 ﻿using System;
 using Volo.Abp.Auditing;
 using Volo.Abp.Domain.Entities;
+using Volo.Abp.MultiTenancy;
 
 namespace Laison.Lapis.Identity.Domain.Entities
 {
     /// <summary>
     /// 角色
     /// </summary>
-    public class Role : AggregateRoot<Guid>, IHasCreationTime
+    public class Role : AggregateRoot<Guid>, IMultiTenant, IHasCreationTime
     {
         /// <summary>
         /// 名称
@@ -20,15 +21,19 @@ namespace Laison.Lapis.Identity.Domain.Entities
         /// </summary>
         public DateTime CreationTime { get; protected set; }
 
+        /// <summary>
+        /// 租户Id
+        /// </summary>
+        public Guid? TenantId { get; protected set; }
+
         protected Role()
         {
         }
 
-        internal Role(Guid id, string name)
+        public Role(Guid id, string name)
         {
             Id = id;
             Name = name;
-
         }
 
         public override string ToString()

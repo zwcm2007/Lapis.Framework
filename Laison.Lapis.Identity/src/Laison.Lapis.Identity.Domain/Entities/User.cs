@@ -57,6 +57,11 @@ namespace Laison.Lapis.Identity.Domain.Entities
         /// </summary>
         public virtual ICollection<UserRole> Roles { get; protected set; }
 
+        /// <summary>
+        /// 租户ID
+        /// </summary>
+        public Guid? TenantId { get; protected set; }
+
         protected User()
         {
         }
