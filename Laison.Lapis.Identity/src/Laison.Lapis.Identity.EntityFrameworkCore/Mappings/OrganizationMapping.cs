@@ -12,7 +12,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
     {
         public void Configure(EntityTypeBuilder<Organization> builder)
         {
-            builder.ToTable("Organizations");
+            builder.ToTable("Organization");
             builder.ConfigureByConvention();
             // Primary Key
             builder.HasKey(r => r.Id);

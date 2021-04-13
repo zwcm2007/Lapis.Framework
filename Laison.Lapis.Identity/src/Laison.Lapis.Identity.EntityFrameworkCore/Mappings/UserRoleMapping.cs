@@ -12,7 +12,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
     {
         public void Configure(EntityTypeBuilder<UserRole> builder)
         {
-            builder.ToTable("UserRoles");
+            builder.ToTable("UserRole");
             builder.ConfigureByConvention();
             // 主键
             builder.HasKey(ur => new { ur.UserId, ur.RoleId });

@@ -6,16 +6,16 @@ using Volo.Abp.EntityFrameworkCore.Modeling;
 namespace Laison.Lapis.Identity.EntityFrameworkCore
 {
     /// <summary>
-    /// 角色映射
+    /// 用户/组织实体映射
     /// </summary>
-    public class RoleMapping : IEntityTypeConfiguration<Role>
+    public class UserOrganizationMapping : IEntityTypeConfiguration<UserOrganization>
     {
-        public void Configure(EntityTypeBuilder<Role> builder)
+        public void Configure(EntityTypeBuilder<UserOrganization> builder)
         {
-            builder.ToTable("Role");
+            builder.ToTable("UserOrganization");
             builder.ConfigureByConvention();
-            // Primary Key
-            builder.HasKey(r => r.Id);
+            // 主键
+            builder.HasKey(uo => new { uo.UserId, uo.OrganizationId });
         }
     }
 }

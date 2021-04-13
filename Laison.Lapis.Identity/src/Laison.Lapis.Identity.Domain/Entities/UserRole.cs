@@ -9,11 +9,11 @@ namespace Laison.Lapis.Identity.Domain.Entities
     /// </summary>
     public class UserRole : Entity, IMultiTenant
     {
-        public virtual Guid? TenantId { get; protected set; }
-
         public virtual Guid UserId { get; protected set; }
 
         public virtual Guid RoleId { get; protected set; }
+
+        public virtual Guid? TenantId { get; protected set; }
 
         protected UserRole()
         {
