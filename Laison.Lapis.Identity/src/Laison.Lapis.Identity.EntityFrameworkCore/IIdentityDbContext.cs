@@ -11,6 +11,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
     {
         // Add DbSet for each Aggregate Root
         DbSet<User> Users { get; }
-        
+        DbSet<Role> Roles { get; }
+        DbSet<Organization> Organizations { get; }
     }
 }

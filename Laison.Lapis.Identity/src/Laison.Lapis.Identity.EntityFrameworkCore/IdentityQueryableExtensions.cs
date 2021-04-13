@@ -1,6 +1,6 @@
-using System.Linq;
 using Laison.Lapis.Identity.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Laison.Lapis.Identity.EntityFrameworkCore
 {
@@ -37,9 +37,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
                 return queryable;
             }
 
-            return queryable
-               // .Include(x => x.Roles)
-                ;
+            return queryable.Include(x => x.Roles);
         }
     }
 }
