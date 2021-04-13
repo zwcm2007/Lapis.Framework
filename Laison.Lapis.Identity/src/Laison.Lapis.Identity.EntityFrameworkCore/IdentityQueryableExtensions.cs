@@ -15,20 +15,8 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
 
             return queryable
                 .Include(x => x.Roles)
-                //.Include(x => x.OrganizationUnits)
-                ;
+                .Include(x => x.Organizations);
         }
-
-        //public static IQueryable<IdentityRole> IncludeDetails(this IQueryable<IdentityRole> queryable, bool include = true)
-        //{
-        //    if (!include)
-        //    {
-        //        return queryable;
-        //    }
-
-        //    return queryable
-        //        .Include(x => x.Claims);
-        //}
 
         public static IQueryable<Organization> IncludeDetails(this IQueryable<Organization> queryable, bool include = true)
         {

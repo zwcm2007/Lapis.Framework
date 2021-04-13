@@ -53,14 +53,19 @@ namespace Laison.Lapis.Identity.Domain.Entities
         public DateTime CreationTime { get; protected set; }
 
         /// <summary>
-        /// 所属角色
+        /// 租户Id
+        /// </summary>
+        public Guid? TenantId { get; protected set; }
+
+        /// <summary>
+        /// 用户/角色
         /// </summary>
         public virtual ICollection<UserRole> Roles { get; protected set; }
 
         /// <summary>
-        /// 租户ID
+        /// 用户/组织
         /// </summary>
-        public Guid? TenantId { get; protected set; }
+        public virtual ICollection<UserOrganization> Organizations { get; protected set; }
 
         protected User()
         {
@@ -70,6 +75,7 @@ namespace Laison.Lapis.Identity.Domain.Entities
         {
             Id = id;
             Name = name;
+            Sex = sex;
             UserName = userName;
             Password = password;
             Email = email;
@@ -79,7 +85,7 @@ namespace Laison.Lapis.Identity.Domain.Entities
         /// <summary>
         /// 修改密码
         /// </summary>
-        /// <param name="currentPwd"></param>
+        /// <param name="currentPwd">当前密码</param>
         /// <param name="newPwd"></param>
         public void ChangePassword(string currentPwd, string newPwd)
         {
