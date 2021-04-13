@@ -1,14 +1,12 @@
 ﻿using System;
-using Volo.Abp.Auditing;
 using Volo.Abp.Domain.Entities;
-using Volo.Abp.MultiTenancy;
 
 namespace Laison.Lapis.Identity.Domain.Entities
 {
     /// <summary>
     /// 角色
     /// </summary>
-    public class Role : AggregateRoot<Guid>, IMultiTenant, IHasCreationTime
+    public class Role : AggregateRoot<Guid>, IRole
     {
         /// <summary>
         /// 名称
