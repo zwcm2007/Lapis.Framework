@@ -12,7 +12,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
     {
         public void Configure(EntityTypeBuilder<UserOrganization> builder)
         {
-            builder.ToTable("UserOrganization");
+            builder.ToTable("user_organization");
             builder.ConfigureByConvention();
             // 主键
             builder.HasKey(uo => new { uo.UserId, uo.OrganizationId });

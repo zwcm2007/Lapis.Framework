@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Laison.Lapis.Identity.Migrations
 {
-    public partial class init : Migration
+    public partial class init2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,10 +12,10 @@ namespace Laison.Lapis.Identity.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false),
-                    TenantId = table.Column<Guid>(type: "char(36)", nullable: true),
-                    ParentId = table.Column<Guid>(type: "char(36)", nullable: true),
                     Code = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     DisplayName = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    ParentId = table.Column<Guid>(type: "char(36)", nullable: true),
+                    TenantId = table.Column<Guid>(type: "char(36)", nullable: true),
                     ExtraProperties = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "varchar(40) CHARACTER SET utf8mb4", maxLength: 40, nullable: true)
                 },
@@ -68,8 +68,8 @@ namespace Laison.Lapis.Identity.Migrations
                 name: "OrganizationRole",
                 columns: table => new
                 {
-                    RoleId = table.Column<Guid>(type: "char(36)", nullable: false),
                     OrganizationId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    RoleId = table.Column<Guid>(type: "char(36)", nullable: false),
                     TenantId = table.Column<Guid>(type: "char(36)", nullable: true)
                 },
                 constraints: table =>

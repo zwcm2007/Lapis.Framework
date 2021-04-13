@@ -13,7 +13,7 @@ namespace Laison.Lapis.Identity.EntityFrameworkCore
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("User");
+            builder.ToTable("user");
             builder.ConfigureByConvention();
             // 主键
             builder.HasKey(u => u.Id);
