@@ -1,6 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Laison.Lapis.PermissionManagement.Domain;
-using Laison.Lapis.PermissionManagement.Domain.Entities;
+﻿using Laison.Lapis.PermissionManagement.Domain;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -19,7 +18,7 @@ namespace Laison.Lapis.PermissionManagement.EntityFrameworkCore
                 options.AddDefaultRepositories(includeAllEntities: true);
 
                 // Add custom repositories
-                options.AddRepository<Order, OrderRepository>();
+                options.AddRepository<PermissionGrant, PermissionGrantRepository>();
             });
         }
     }

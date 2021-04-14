@@ -1,7 +1,6 @@
 ﻿namespace Laison.Lapis.PermissionManagement.Application.Contracts
 {
-    public class OrderDto
+    public class UpdatePermissionsDto
     {
-        public int Value { get; set; }
     }
 }
