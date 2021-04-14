@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Laison.Lapis.PermissionManagement.HttpApi</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="4.2.2" />
+    <ProjectReference Include="..\Laison.Lapis.PermissionManagement.Application.Contracts\Laison.Lapis.PermissionManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
