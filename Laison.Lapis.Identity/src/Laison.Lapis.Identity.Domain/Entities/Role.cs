@@ -28,10 +28,11 @@ namespace Laison.Lapis.Identity.Domain.Entities
         {
         }
 
-        public Role(Guid id, string name)
+        public Role(Guid id, string name, Guid? tenantId = null)
         {
             Id = id;
             Name = name;
+            TenantId = tenantId;
         }
 
         public override string ToString()

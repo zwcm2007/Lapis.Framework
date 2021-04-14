@@ -2,6 +2,7 @@
 using Laison.Lapis.Identity.Domain.Entities;
 using Laison.Lapis.Identity.Domain.IRepositories;
 using Laison.Lapis.Identity.Domain.Shared;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp.Localization;
@@ -22,10 +23,12 @@ namespace Laison.Lapis.Identity.Application
             _userRepository = userRepository;
         }
 
-        [UnitOfWork]
+        [Authorize(IdentityPermissions.Users.Create)]
         public async Task CreateUserAsync(CreateUserInput input)
         {
-            var user = new User(GuidGenerator.Create(), input.UserName, UserConsts.DefaultInitPassword.ToMd5(),
+            var user = new User(GuidGenerator.Create(),
+                input.UserName,
+                UserConsts.DefaultInitPassword.ToMd5(),
                 input.Name,
                 input.Email,
                 input.Sex,
