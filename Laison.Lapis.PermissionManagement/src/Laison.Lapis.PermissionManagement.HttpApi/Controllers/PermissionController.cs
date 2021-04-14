@@ -1,7 +1,6 @@
 ﻿using JetBrains.Annotations;
 using Laison.Lapis.PermissionManagement.Application.Contracts;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 using Volo.Abp;
 
@@ -18,9 +17,10 @@ namespace Laison.Lapis.PermissionManagement.HttpApi
             _permissionAppService = permissionAppService;
         }
 
+        [HttpPut]
         public Task UpdateAsync([NotNull] string providerName, [NotNull] string providerKey, UpdatePermissionsDto input)
         {
-            throw new NotImplementedException();
+            return _permissionAppService.UpdateAsync(providerName, providerKey, input);
         }
     }
 }

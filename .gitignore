@@ -254,3 +254,4 @@ paket-files/
 /Laison.Lapis.Demo/host/Laison.Lapis.Demo.HttpApi.Host/Logs
 /Laison.Lapis.Shared/host/Laison.Lapis.Host/Logs
 /Laison.Lapis.Prepayment/host/Laison.Lapis.Prepayment.HttpApi.Host/Logs
+/Laison.Lapis.PermissionManagement/host/Laison.Lapis.PermissionManagement.HttpApi.Host/Logs
