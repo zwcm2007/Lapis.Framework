@@ -7,11 +7,11 @@ namespace Laison.Lapis.PermissionManagement.Samples
 {
     public class SampleAppService_Tests : PermissionManagementApplicationTestBase
     {
-        private readonly IOrderAppService _orderAppService;
+        //private readonly IOrderAppService _orderAppService;
 
         public SampleAppService_Tests()
         {
-            _orderAppService = GetRequiredService<IOrderAppService>();
+           // _orderAppService = GetRequiredService<IOrderAppService>();
         }
 
         //[Fact]

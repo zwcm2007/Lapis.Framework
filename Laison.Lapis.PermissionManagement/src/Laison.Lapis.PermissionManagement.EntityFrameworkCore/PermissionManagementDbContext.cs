@@ -19,7 +19,7 @@ namespace Laison.Lapis.PermissionManagement.EntityFrameworkCore
         {
             base.OnModelCreating(builder);
 
-            builder.ConfigurePermissionManagement();
+            //builder.ConfigurePermissionManagement();
         }
     }
 }

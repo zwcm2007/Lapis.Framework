@@ -8,7 +8,6 @@ namespace Laison.Lapis.PermissionManagement.EntityFrameworkCore
     [ConnectionStringName(PermissionManagementDbProperties.ConnectionStringName)]
     public interface IPermissionManagementDbContext : IEfCoreDbContext
     {
-        // Add DbSet for each Aggregate Root
         DbSet<PermissionGrant> PermissionGrants { get; }
     }
 }

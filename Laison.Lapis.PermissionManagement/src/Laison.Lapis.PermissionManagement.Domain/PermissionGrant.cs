@@ -7,7 +7,7 @@ using Volo.Abp.MultiTenancy;
 namespace Laison.Lapis.PermissionManagement.Domain
 {
     //TODO: To aggregate root?
-    public class PermissionGrant : Entity<Guid>, IMultiTenant
+    public class PermissionGrant : AggregateRoot<Guid>, IMultiTenant
     {
         public virtual Guid? TenantId { get; protected set; }
 
