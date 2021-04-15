@@ -5,7 +5,6 @@ using Laison.Lapis.Shared.Host;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.MySQL;
 using Volo.Abp.Modularity;
 
 namespace Laison.Lapis.PermissionManagement

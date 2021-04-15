@@ -12,6 +12,7 @@ namespace Laison.Lapis.PermissionManagement.EntityFrameworkCore
             var configuration = BuildConfiguration();
 
             var connStr = configuration.GetConnectionString("PermissionManagement");
+
             var builder = new DbContextOptionsBuilder<PermissionManagementHttpApiHostMigrationsDbContext>()
                 .UseMySql(connStr, ServerVersion.AutoDetect(connStr));
 
